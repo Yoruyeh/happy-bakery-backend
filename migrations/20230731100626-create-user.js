@@ -30,8 +30,10 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
-      role: {
-        type: Sequelize.STRING
+      is_admin: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
       },
       created_at: {
         allowNull: false,
