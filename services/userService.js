@@ -32,6 +32,35 @@ const userService = {
         is_admin: user.is_admin
       }
     }
+  },
+
+  signUp: async (firstName, lastName, gender, email, password) => {
+    const user = await User.findOne({ where: { email } })
+    if (user) {
+      throw new Error('email already exists')
+    } else {
+      const hash = await bcrypt.hash(password, 10)
+      const newUser = await User.create({
+        firstName,
+        lastName,
+        gender,
+        email,
+        password: hash,
+        is_admin: false,
+      })
+
+      const token = jwt.sign({ id: newUser.dataValues.id }, process.env.JWT_SECRET, { expiresIn: '30d' })
+
+      return {
+        status: 'success',
+        message: 'register succeed',
+        token,
+        user: {
+          id: newUser.dataValues.id,
+          email: newUser.email,
+        },
+      }
+    }
   }
 }
 
