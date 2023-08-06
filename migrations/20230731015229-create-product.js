@@ -29,7 +29,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       price_regular: {
-        type: Sequelize.DECIMAL(10, 2)
+        type: Sequelize.INTEGER
+      },
+      price_sale: {
+        type: Sequelize.INTEGER
+      },
+      description: {
+        type: Sequelize.TEXT
       },
       created_at: {
         allowNull: false,
