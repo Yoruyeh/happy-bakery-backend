@@ -24,6 +24,7 @@ module.exports = {
         phone: faker.phone.number('09##-###-###'),
         password: await bcrypt.hash('12345678', 10),
         address: faker.location.city(),
+        birthday: faker.date.birthdate({ min: 18, max: 65, mode: 'age' }),
         is_admin: false,
         created_at: new Date(),
         updated_at: new Date()

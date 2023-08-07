@@ -30,6 +30,9 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      birthday: {
+        type: Sequelize.DATE
+      },
       is_admin: {
         type: Sequelize.BOOLEAN,
         allowNull: false,

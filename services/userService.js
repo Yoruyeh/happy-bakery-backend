@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
+const sequelize = require('sequelize')
 const { User } = require('../models')
 
 const userService = {
@@ -56,6 +57,22 @@ const userService = {
         },
       }
     }
+  },
+
+  getSetting: (id) => {
+    return User.findByPk(id, {
+      attributes: [
+        'firstName',
+        'lastName',
+        'gender',
+        'email',
+        'address',
+        'phone',
+        [sequelize.literal('DATE(birthday)'), 'birthday']
+      ],
+      raw: true,
+      nest: true
+    })
   }
 }
 
