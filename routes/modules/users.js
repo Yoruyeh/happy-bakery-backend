@@ -14,5 +14,6 @@ router.post('/', userController.signUp)
 
 // user info
 router.get('/', authenticated, userController.getUserSetting)
+router.put('/', authenticated, userController.putUserSetting)
 
 module.exports = router

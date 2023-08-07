@@ -1,5 +1,6 @@
 const validator = require('validator')
 const zxcvbn = require('zxcvbn') // test password strong or weak by score 0-4
+const PhoneNumber = require('libphonenumber-js');
 const userService = require('../services/userService')
 const { User } = require('../models')
 const { CError } = require('../middleware/error-handler')
@@ -55,6 +56,25 @@ const userController = {
       const currentUserId = req.user.id
       const user = await userService.getSetting(currentUserId)
       return res.json({ user })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  putUserSetting: async (req, res, next) => {
+    try {
+      if (!req.user) throw new CError('User data not found', 400)
+      if (!req.isAuthenticated()) throw new CError('User not authenticated', 401)
+      if (req.user.isAdmin === true) throw new CError('Admin not allowed', 400)
+
+      const currentUserId = req.user.id
+      const data = req.body
+      const { status, message, user } = await userService.putSetting(currentUserId, data)
+      return res.json({
+        status,
+        message,
+        user
+      })
     } catch (error) {
       next(error)
     }
