@@ -43,6 +43,18 @@ const userController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  getUserSetting: async (req, res, next) => {
+    try {
+      if (!req.user) throw new CError('User data not found', 400)
+      if (!req.isAuthenticated()) throw new CError('User not authenticated', 401)
+
+      const currentUserId = req.user.id
+      console.log(currentUserId)
+    } catch (error) {
+      next(error)
+    }
   }
 }
 module.exports = userController

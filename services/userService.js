@@ -15,11 +15,6 @@ const userService = {
       error.status = 403
       throw error
     }
-    if (user.is_admin) {
-      const error = new Error('Access forbidden')
-      error.status = 403
-      throw error
-    }
     const payload = { id: user.id }
     const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '30d' })
     return {
@@ -29,7 +24,7 @@ const userService = {
       user: {
         id: user.id,
         email: user.email,
-        is_admin: user.is_admin
+        admin: user.isAdmin
       }
     }
   },
