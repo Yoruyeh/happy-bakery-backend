@@ -102,6 +102,18 @@ const userController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  getUserOrders: async (req, res, next) => {
+    try {
+      const user = req.user
+      if (!user || !req.isAuthenticated() || user.isAdmin) throw new CError('Unauthorized', 401)
+
+      const { status, message, userOrders } = await userService.getUserOrders(user.id)
+      res.json({ status, message, userOrders })
+    } catch (error) {
+      next(error)
+    }
   }
 
 }

@@ -5,7 +5,7 @@ const PhoneNumber = require('libphonenumber-js')
 const { dateFormate } = require('../helpers/dateHelper')
 const sequelize = require('sequelize')
 const { CError } = require('../middleware/error-handler')
-const { User } = require('../models')
+const { User, Order } = require('../models')
 
 const userService = {
   signIn: async (email, password) => {
@@ -155,6 +155,28 @@ const userService = {
     return {
       status: 'success',
       message: 'User password change succeed'
+    }
+  },
+
+  getUserOrders: async (id) => {
+    const orders = await Order.findAll({
+      where: { userId: id },
+      order: [['created_at', 'DESC']],
+      attributes: [
+        'id',
+        [sequelize.literal('DATE(created_at)'), 'order_date'],
+        'total_price',
+        'status',
+      ],
+      raw: true,
+      nest: true
+    })
+    console.log(orders)
+
+    return {
+      status: 'success',
+      message: 'User orders succeed',
+      userOrders: orders
     }
   }
 }

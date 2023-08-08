@@ -14,6 +14,7 @@ router.post('/', userController.signUp)
 
 // user info
 router.put('/password', authenticated, userController.putUserPassword)
+router.get('/orders', authenticated, userController.getUserOrders)
 router.get('/', authenticated, userController.getUserSetting)
 router.put('/', authenticated, userController.putUserSetting)
 
