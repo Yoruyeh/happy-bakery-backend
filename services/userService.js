@@ -139,6 +139,23 @@ const userService = {
           }
         })
     }
+  },
+
+  putPassword: async (id, data) => {
+    const { currentPW, newPW, confirmPW } = data
+
+    const user = await User.findByPk(id)
+    if (!user) throw new CError('User not found', 404)
+    if (!bcrypt.compareSync(currentPW, user.password)) throw new CError('Wrong password', 403)
+    if (newPW !== confirmPW) throw new CError('Passwords do not match', 403)
+
+    const hash = await bcrypt.hash(newPW, 10)
+    await user.update({ password: hash })
+
+    return {
+      status: 'success',
+      message: 'User password change succeed'
+    }
   }
 }
 

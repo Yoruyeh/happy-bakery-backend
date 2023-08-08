@@ -13,6 +13,7 @@ router.post('/signin', userController.signIn)
 router.post('/', userController.signUp)
 
 // user info
+router.put('/password', authenticated, userController.putUserPassword)
 router.get('/', authenticated, userController.getUserSetting)
 router.put('/', authenticated, userController.putUserSetting)
 

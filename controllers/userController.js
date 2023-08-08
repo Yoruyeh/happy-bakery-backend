@@ -78,6 +78,30 @@ const userController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  putUserPassword: async (req, res, next) => {
+    try {
+      const user = req.user
+      const { currentPW, newPW, confirmPW } = req.body
+
+      if (!user || !req.isAuthenticated() || user.isAdmin) {
+        throw new CError('Unauthorized', 401)
+      }
+
+      if (currentPW === undefined || newPW === undefined || confirmPW === undefined) {
+        throw new CError('All fields are required', 400)
+      }
+
+      if (newPW === currentPW) {
+        throw new CError('New password cannot be the same as the current password', 400)
+      }
+
+      const { status, message } = await userService.putPassword(user.id, req.body)
+      res.json({ status, message })
+    } catch (error) {
+      next(error)
+    }
   }
 
 }
