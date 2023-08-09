@@ -1,12 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const users = require('./modules/users')
 const admin = require('./modules/admin')
+const users = require('./modules/users')
+const products = require('./modules/products')
 const { apiErrorHandler } = require('../middleware/error-handler')
 
 // route branch
 router.use('/api/admin', admin)
 router.use('/api/users', users)
+router.use('/api/products', products)
 
 router.get('/', (req, res) => {
   res.send('Hello world!')

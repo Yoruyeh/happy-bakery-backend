@@ -22,6 +22,10 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
+      cover: {
+        type: Sequelize.STRING,
+        defaultValue: 'https://i.imgur.com/6sWt4la.png',
+      },
       sku: {
         type: Sequelize.INTEGER
       },
