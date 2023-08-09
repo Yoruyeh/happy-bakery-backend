@@ -1,5 +1,5 @@
 const sequelize = require('sequelize')
-const { Product } = require('../models')
+const { Product, ProductImage } = require('../models')
 
 const productService = {
   getProducts: async (category, page, sort) => {
@@ -43,6 +43,39 @@ const productService = {
         status: 'success',
         message: 'products retrieved succeed',
         products
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no products found'
+      }
+    }
+  },
+
+  getProduct: async (id) => {
+    const product = await Product.findByPk(id, {
+      attributes: [
+        'id',
+        'name',
+        'cover',
+        'price_regular',
+        'price_sale',
+        'description',
+        'stock_quantity'
+      ],
+      include: {
+        model: ProductImage,
+        attributes: ['name', 'image_path'],
+        where: {
+          is_display: 1
+        }
+      },
+    })
+    if (product !== null) {
+      return {
+        status: 'success',
+        message: 'product retrieved succeed',
+        product
       }
     } else {
       return {
