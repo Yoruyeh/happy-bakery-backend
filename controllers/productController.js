@@ -1,5 +1,6 @@
 const productService = require('../services/productService')
 const { CError } = require('../middleware/error-handler')
+const { validateId } = require('../helpers/validationHelper')
 
 const productController = {
 
@@ -19,10 +20,22 @@ const productController = {
   getProduct: async (req, res, next) => {
     try {
       const { id } = req.params
-      const idPattern = /^[1-9]\d*$/
-      if (!id || !idPattern.test(id)) throw new CError('invalid product id', 400)
+      if (!id || !validateId(id)) throw new CError('invalid product id', 400)
 
       const { status, message, product } = await productService.getProduct(id)
+      res.json({ status, message, product })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  getPopularProduct: async (req, res, next) => {
+    try {
+      const { top } = req.query
+      if (top !== undefined && !validateId(top)) throw new CError('invalid product id', 400)
+      const topCount = top || 5
+
+      const { status, message, product } = await productService.getPopularProducts(topCount)
       res.json({ status, message, product })
     } catch (error) {
       next(error)

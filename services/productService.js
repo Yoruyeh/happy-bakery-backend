@@ -83,6 +83,10 @@ const productService = {
         message: 'no products found'
       }
     }
+  },
+
+  getPopularProducts: async (topCount) => {
+    // tbc
   }
 }
 
