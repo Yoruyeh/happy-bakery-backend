@@ -1,6 +1,6 @@
 const orderService = require('../services/orderService')
 const { CError } = require('../middleware/error-handler')
-const { isValidateId, isValidOrderItem } = require('../helpers/validationHelper')
+const { isValidateId, isValidItem } = require('../helpers/validationHelper')
 
 const orderController = {
 
@@ -20,7 +20,7 @@ const orderController = {
     try {
       const { orderItems, shipment, payment } = req.body
       if (!orderItems || !shipment || !payment) throw new CError('invalid input', 400)
-      const isValidOrderItems = orderItems.every(isValidOrderItem)
+      const isValidOrderItems = orderItems.every(isValidItem)
       if (!isValidOrderItems) throw new CError('invalid orderItems', 400)
 
       // tbc

@@ -11,7 +11,7 @@ const isValidPositiveInteger = (value) => {
 }
 
 // check order item id, quantity, price
-const isValidOrderItem = (item) => {
+const isValidItem = (item) => {
   return (
     item.id !== undefined &&
     item.quantity !== undefined &&
@@ -24,5 +24,5 @@ const isValidOrderItem = (item) => {
 
 module.exports = {
   isValidateId,
-  isValidOrderItem
+  isValidItem
 }
