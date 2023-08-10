@@ -13,12 +13,14 @@ module.exports = {
       Array.from({ length: 100 }, () => ({
         user_id: users[Math.floor(Math.random() * users.length)].id,
         status: faker.helpers.arrayElement(['pending', 'cancel', 'delivered']),
-        name: faker.person.fullName(),
+        first_name: faker.person.firstName(),
+        last_name: faker.person.lastName(),
         email: faker.internet.email(),
         phone: faker.phone.number('09##-###-###'),
         address: faker.location.city(),
         payment_method: faker.helpers.arrayElement(['PayPal', 'ECPAY', 'NewebPay']),
         shipping_method: faker.helpers.arrayElement(['standard', 'store']),
+        order_date: new Date(),
         created_at: new Date(),
         updated_at: new Date(),
       }))

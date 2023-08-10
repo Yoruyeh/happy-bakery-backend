@@ -22,7 +22,10 @@ module.exports = {
       status: {
         type: Sequelize.STRING
       },
-      name: {
+      first_name: {
+        type: Sequelize.STRING
+      },
+      last_name: {
         type: Sequelize.STRING
       },
       email: {
