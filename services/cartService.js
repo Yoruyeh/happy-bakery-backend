@@ -64,6 +64,24 @@ const cartService = {
       message: 'add new cart items succeed',
       newCartItem
     }
+  },
+
+  deleteCartItem: async (user_id, product_id) => {
+    const cart = await Cart.findOne({ where: { user_id } })
+    if (!cart) throw new Error('no cart found')
+
+    const cart_id = cart.dataValues.id
+
+    const deleteCartItem = await CartItem.findOne({ where: { cart_id, product_id } })
+    if (!deleteCartItem) throw new Error('no cart item found')
+
+    // delete cart item
+    await deleteCartItem.destroy()
+
+    return {
+      status: 'success',
+      message: 'delete cart item succeed'
+    }
   }
 
 }

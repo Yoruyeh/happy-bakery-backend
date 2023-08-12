@@ -8,6 +8,7 @@ const { authenticated } = require('../../middleware/api-auth')
 // import controller
 const cartController = require('../../controllers/cartController')
 
+router.delete('/:productId', authenticated, cartController.deleteCartItem)
 router.post('/', authenticated, cartController.postCartItem)
 router.get('/', authenticated, cartController.getCart)
 

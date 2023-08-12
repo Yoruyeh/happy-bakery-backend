@@ -42,6 +42,23 @@ const cartController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  deleteCartItem: async (req, res, next) => {
+    try {
+      const user = req.user
+      if (!user) throw new CError('User data not found', 400)
+      if (!req.isAuthenticated()) throw new CError('User not authenticated', 401)
+      if (user.isAdmin) throw new CError('Admin not allowed', 400)
+
+      const currentUserId = user.id
+      const { productId } = req.params
+
+      const { status, message } = await cartService.deleteCartItem(currentUserId, productId)
+      res.json({ status, message })
+    } catch (error) {
+      next(error)
+    }
   }
 
 }
