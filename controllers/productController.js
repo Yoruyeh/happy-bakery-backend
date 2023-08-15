@@ -10,8 +10,8 @@ const productController = {
       // page should be at least 1
       page = page >= 1 ? page : 1
 
-      const { status, message, products } = await productService.getProducts(category, page, sort)
-      res.json({ status, message, products })
+      const { status, message, productCount, products } = await productService.getProducts(category, page, sort)
+      res.json({ status, message, productCount, products })
     } catch (error) {
       next(error)
     }

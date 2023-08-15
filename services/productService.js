@@ -1,5 +1,5 @@
 const sequelize = require('sequelize')
-const { Product, ProductImage } = require('../models')
+const { Category, Product, ProductImage } = require('../models')
 
 const productService = {
   getProducts: async (category, page, sort) => {
@@ -12,6 +12,8 @@ const productService = {
       date_desc: ['createdAt', 'DESC'],
       date_asc: ['createdAt', 'ASC']
     }
+    // get product count
+    const productCount = await productService.getProductCount(category)
 
     const queryOptions = {
       where: {},
@@ -25,8 +27,12 @@ const productService = {
         'cover',
         'price_regular',
         'price_sale',
-        [sequelize.literal('DATE(created_at)'), 'create_date'],
+        [sequelize.literal('DATE(Product.created_at)'), 'create_date'],
       ],
+      include: {
+        model: Category,
+        attributes: ['name']
+      },
       raw: true,
       nest: true
     }
@@ -42,6 +48,7 @@ const productService = {
       return {
         status: 'success',
         message: 'products retrieved succeed',
+        productCount,
         products
       }
     } else {
@@ -50,6 +57,14 @@ const productService = {
         message: 'no products found'
       }
     }
+  },
+
+  getProductCount: async (categoryId) => {
+    const whereOptions = categoryId ? { category_id: categoryId } : {}
+    let totalCount
+    totalCount = await Product.count({ where: whereOptions })
+
+    return totalCount
   },
 
   getProduct: async (id) => {

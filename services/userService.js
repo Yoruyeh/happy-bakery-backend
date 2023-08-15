@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const validator = require('validator')
-const PhoneNumber = require('libphonenumber-js')
 const { dateFormate } = require('../helpers/dateHelper')
 const sequelize = require('sequelize')
 const { CError } = require('../middleware/error-handler')
@@ -66,6 +65,7 @@ const userService = {
   getSetting: (id) => {
     return User.findByPk(id, {
       attributes: [
+        'id',
         'firstName',
         'lastName',
         'gender',
@@ -93,7 +93,7 @@ const userService = {
       errors.push('Invalid birthday')
     }
 
-    if (phone !== undefined && !new PhoneNumber(phone).isValid()) {
+    if (phone !== undefined && phone.length > 10 || phone !== undefined && phone.length < 8) {
       errors.push('Invalid phone number')
     }
 
@@ -171,7 +171,6 @@ const userService = {
       raw: true,
       nest: true
     })
-    console.log(orders)
 
     return {
       status: 'success',

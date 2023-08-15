@@ -21,7 +21,7 @@ module.exports = {
         last_name: faker.person.lastName(),
         gender: faker.helpers.arrayElement(['male', 'female', 'other']),
         email: 'user' + i + '@example.com',
-        phone: faker.phone.number('09##-###-###'),
+        phone: faker.phone.number('09########'),
         password: await bcrypt.hash('12345678', 10),
         address: faker.location.city(),
         birthday: faker.date.birthdate({ min: 18, max: 65, mode: 'age' }),
