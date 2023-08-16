@@ -12,6 +12,7 @@ module.exports = {
         product_id: products[Math.floor(Math.random() * products.length)].id,
         name: faker.word.adjective(),
         image_path: faker.image.urlLoremFlickr({ category: 'food' }),
+        is_display: faker.helpers.arrayElement([0, 1]),
         created_at: new Date(),
         updated_at: new Date(),
       }))

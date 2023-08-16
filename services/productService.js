@@ -83,7 +83,8 @@ const productService = {
         attributes: ['name', 'image_path'],
         where: {
           is_display: 1
-        }
+        },
+        required: false
       },
     })
     if (product !== null) {
@@ -95,7 +96,7 @@ const productService = {
     } else {
       return {
         status: 'success',
-        message: 'no products found'
+        message: 'no product found'
       }
     }
   },
