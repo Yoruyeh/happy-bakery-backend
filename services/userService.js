@@ -4,7 +4,7 @@ const validator = require('validator')
 const { dateFormate } = require('../helpers/dateHelper')
 const sequelize = require('sequelize')
 const { CError } = require('../middleware/error-handler')
-const { User, Order } = require('../models')
+const { User, Order, Cart } = require('../models')
 
 const userService = {
   signIn: async (email, password) => {
@@ -48,7 +48,10 @@ const userService = {
         is_admin: false,
       })
 
-      const token = jwt.sign({ id: newUser.dataValues.id }, process.env.JWT_SECRET, { expiresIn: '30d' })
+      const newId = newUser.dataValues.id
+      const newCart = await Cart.create({ userId: newId })
+
+      const token = jwt.sign({ id: newId }, process.env.JWT_SECRET, { expiresIn: '30d' })
 
       return {
         status: 'success',
@@ -57,6 +60,7 @@ const userService = {
         user: {
           id: newUser.dataValues.id,
           email: newUser.email,
+          cart_id: newCart.dataValues.id
         },
       }
     }
