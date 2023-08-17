@@ -12,7 +12,7 @@ const cartService = {
       attributes: ['quantity', 'price_each'],
       include: {
         model: Product,
-        attributes: ['name', 'cover']
+        attributes: ['id', 'name', 'cover']
       }
     })
 

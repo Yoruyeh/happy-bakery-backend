@@ -1,5 +1,5 @@
 const sequelize = require('sequelize')
-const { Order, OrderItem, Product } = require('../models')
+const { Order, OrderItem, Product, Cart, CartItem } = require('../models')
 
 const orderService = {
 
@@ -49,6 +49,60 @@ const orderService = {
       return {
         status: 'success',
         message: 'no order found'
+      }
+    }
+  },
+
+  postOrder: async (userId, orderItems, total, shipment, payment) => {
+    const { email, firstName, lastName, address, phone, shippingMethod } = shipment
+    const { paymentMethod } = payment
+
+    // create order
+    const newOrder = await Order.create({
+      userId,
+      status: 'pending',
+      firstName,
+      lastName,
+      email,
+      phone,
+      address,
+      orderDate: new Date(),
+      totalPrice: total,
+      paymentMethod,
+      shippingMethod,
+    })
+
+    // create order items
+    const formattedOrderItems = orderItems.map(item => {
+      return {
+        productId: item.id,
+        quantity: item.quantity,
+        priceEach: item.price
+      }
+    })
+    const orderId = newOrder.dataValues.id
+    formattedOrderItems.forEach(item => {
+      item.orderId = orderId;
+    })
+    const newOrderItem = await OrderItem.bulkCreate(formattedOrderItems)
+
+    // clear cart
+    const cart = await Cart.findOne({ where: { userId } })
+    const cartId = cart.dataValues.id
+    await CartItem.destroy({ where: { cartId: cartId } })
+
+    // return data
+    if (newOrder !== null || newOrderItem !== null) {
+      return {
+        status: 'success',
+        message: 'create order succeed',
+        newOrder,
+        newOrderItem
+      }
+    } else {
+      return {
+        status: 'error',
+        message: 'create order fail'
       }
     }
   }

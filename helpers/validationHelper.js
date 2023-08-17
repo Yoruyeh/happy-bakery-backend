@@ -24,5 +24,6 @@ const isValidItem = (item) => {
 
 module.exports = {
   isValidateId,
+  isValidPositiveInteger,
   isValidItem
 }
