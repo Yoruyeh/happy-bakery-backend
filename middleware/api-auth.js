@@ -9,6 +9,11 @@ module.exports = {
           .status(401)
           .json({ status: 'error', message: 'unauthorized' })
       }
+      if (user.isAdmin == true) {
+        return res
+          .status(403)
+          .json({ status: 'error', message: 'Permission denied, it is only for user' })
+      }
       req.user = user
       return next()
     })(req, res, next)

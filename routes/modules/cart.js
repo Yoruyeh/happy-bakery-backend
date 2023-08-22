@@ -9,6 +9,7 @@ const { authenticated } = require('../../middleware/api-auth')
 const cartController = require('../../controllers/cartController')
 
 router.delete('/:productId', authenticated, cartController.deleteCartItem)
+router.patch('/:productId', authenticated, cartController.patchCartItem)
 router.post('/', authenticated, cartController.postCartItem)
 router.get('/', authenticated, cartController.getCart)
 

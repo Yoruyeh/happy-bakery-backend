@@ -66,6 +66,34 @@ const cartService = {
     }
   },
 
+  patchCartItem: async (user_id, product_id, quantity) => {
+    try {
+      const cart = await Cart.findOne({ where: { user_id } })
+      if (!cart) throw new Error('no cart found')
+
+      const cart_id = cart.dataValues.id
+
+      const cartItem = await CartItem.findOne({ where: { cart_id, product_id } })
+      if (!cartItem) throw new Error('no cart item found')
+
+      // patch cart item
+      await CartItem.update(
+        { quantity },
+        { where: { cart_id, product_id } }
+      )
+
+      return {
+        status: 'success',
+        message: 'patch cart item succeed',
+      }
+    } catch (error) {
+      return {
+        status: 'error',
+        message: error.message
+      }
+    }
+  },
+
   deleteCartItem: async (user_id, product_id) => {
     const cart = await Cart.findOne({ where: { user_id } })
     if (!cart) throw new Error('no cart found')

@@ -1,15 +1,11 @@
 const cartService = require('../services/cartService')
 const { CError } = require('../middleware/error-handler')
-const { isValidItem } = require('../helpers/validationHelper')
+const { isValidItem, isValidateId, isValidPositiveInteger } = require('../helpers/validationHelper')
 
 const cartController = {
 
   getCart: async (req, res, next) => {
     try {
-      if (!req.user) throw new CError('User data not found', 400)
-      if (!req.isAuthenticated()) throw new CError('User not authenticated', 401)
-      if (req.user.isAdmin === true) throw new CError('Admin not allowed', 400)
-
       const currentUserId = req.user.id
 
       const { status, message, cartItems } = await cartService.getCart(currentUserId)
@@ -21,12 +17,7 @@ const cartController = {
 
   postCartItem: async (req, res, next) => {
     try {
-      const user = req.user
-      if (!user) throw new CError('User data not found', 400)
-      if (!req.isAuthenticated()) throw new CError('User not authenticated', 401)
-      if (user.isAdmin) throw new CError('Admin not allowed', 400)
-
-      const currentUserId = user.id
+      const currentUserId = req.user.id
       const product = req.body
       const requiredKeys = ['id', 'quantity', 'price']
 
@@ -44,14 +35,25 @@ const cartController = {
     }
   },
 
+  patchCartItem: async (req, res, next) => {
+    try {
+      const currentUserId = req.user.id
+      const { productId } = req.params
+      const { quantity } = req.body
+      if (!isValidateId(productId)) throw new CError('invalid product id', 400)
+      if (!isValidPositiveInteger(quantity)) throw new CError('invalid quantity', 400)
+      if (quantity > 10) throw new Error('exceed quantity limit')
+
+      const { status, message } = await cartService.patchCartItem(currentUserId, productId, quantity)
+      res.json({ status, message })
+    } catch (error) {
+      next(error)
+    }
+  },
+
   deleteCartItem: async (req, res, next) => {
     try {
-      const user = req.user
-      if (!user) throw new CError('User data not found', 400)
-      if (!req.isAuthenticated()) throw new CError('User not authenticated', 401)
-      if (user.isAdmin) throw new CError('Admin not allowed', 400)
-
-      const currentUserId = user.id
+      const currentUserId = req.user.id
       const { productId } = req.params
 
       const { status, message } = await cartService.deleteCartItem(currentUserId, productId)

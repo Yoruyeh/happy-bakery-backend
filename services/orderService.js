@@ -57,6 +57,7 @@ const orderService = {
     const { email, firstName, lastName, address, phone, shippingMethod } = shipment
     const { paymentMethod } = payment
 
+    // tbc: should check stock
     // create order
     const newOrder = await Order.create({
       userId,
