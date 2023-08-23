@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
-const { User } = require('../models')
+const { User, Product, Category, ProductImage } = require('../models')
 
 const adminService = {
   signIn: async (email, password) => {
@@ -30,6 +30,47 @@ const adminService = {
         id: user.id,
         email: user.email,
         admin: user.isAdmin
+      }
+    }
+  },
+
+  getProduct: async (id) => {
+    const product = await Product.findByPk(id, {
+      attributes: [
+        'id',
+        'name',
+        'cover',
+        'description',
+        'sku',
+        'stock_quantity',
+        'price_regular',
+        'price_sale'
+      ],
+      include: [
+        {
+          model: Category,
+          attributes: ['id', 'name'],
+        },
+        {
+          model: ProductImage,
+          attributes: ['name', 'image_path', 'is_display'],
+          required: false
+        }
+      ],
+      order: [
+        [ProductImage, 'is_display', 'DESC']
+      ]
+    })
+    if (product !== null) {
+      return {
+        status: 'success',
+        message: 'product retrieved succeed',
+        product
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no product found'
       }
     }
   }

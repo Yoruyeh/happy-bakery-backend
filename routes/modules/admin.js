@@ -11,6 +11,9 @@ const adminController = require('../../controllers/adminController')
 // admin login
 router.post('/signin', adminController.signIn)
 
+// product
+router.get('/product/:id', authenticatedAdmin, adminController.getProduct)
+
 // admin info
 router.get('/', authenticatedAdmin, adminController.getAdminSetting)
 

@@ -1,5 +1,6 @@
 const adminService = require('../services/adminService')
 const { CError } = require('../middleware/error-handler')
+const { isValidateId } = require('../helpers/validationHelper')
 
 const adminController = {
 
@@ -12,6 +13,21 @@ const adminController = {
         message,
         token,
         user,
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  getProduct: async (req, res, next) => {
+    try {
+      const { id } = req.params
+      if (!isValidateId(id)) throw new CError('product id invalid', 400)
+      const { status, message, product } = await adminService.getProduct(id)
+      return res.json({
+        status,
+        message,
+        product
       })
     } catch (error) {
       next(error)
