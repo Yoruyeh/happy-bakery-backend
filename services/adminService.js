@@ -91,6 +91,60 @@ const adminService = {
         message: 'no product found'
       }
     }
+  },
+
+  postProduct: async (productInfo, productImages) => {
+    const { name, description, category, cover, sku, quantity, priceRegular, priceSale } = productInfo
+
+    // check category
+    const DEFAULT_CATEGORY_ID = 1
+    let categoryId = DEFAULT_CATEGORY_ID
+    const categoryData = await Category.findOne({
+      where: { name: category }
+    })
+    if (categoryData) {
+      categoryId = categoryData.id
+    } else {
+      throw new CError(`cannot find category ${category}`, 400)
+    }
+
+    // create product
+    const newProduct = await Product.create({
+      name,
+      categoryId,
+      cover,
+      description,
+      sku,
+      stockQuantity: quantity,
+      priceRegular,
+      priceSale
+    })
+
+    // create product image
+    const productId = newProduct.id
+    const newImages = await Promise.all(
+      productImages.map(async (image) => {
+        return ProductImage.create({
+          productId,
+          name: image.name,
+          imagePath: image.link,
+        })
+      }))
+
+    // return data
+    if (newProduct !== null || newImages !== null) {
+      return {
+        status: 'success',
+        message: 'create product succeed',
+        newProduct,
+        newImages
+      }
+    } else {
+      return {
+        status: 'error',
+        message: 'create product fail'
+      }
+    }
   }
 }
 

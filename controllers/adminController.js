@@ -1,6 +1,6 @@
 const adminService = require('../services/adminService')
 const { CError } = require('../middleware/error-handler')
-const { isValidateId } = require('../helpers/validation-helper')
+const { isValidateId, validProduct, validateImages } = require('../helpers/validation-helper')
 const { imgurFileHandler } = require('../helpers/file-helper')
 
 const adminController = {
@@ -29,6 +29,25 @@ const adminController = {
         status,
         message,
         product
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  postProduct: async (req, res, next) => {
+    try {
+      const { productInfo, productImage } = req.body
+      if (!productInfo || !productImage) throw new CError('invalid input', 400)
+      if (!validProduct(productInfo)) throw new CError('invalid product info', 400)
+      if (!validateImages(productImage)) throw new CError('invalid product image', 400)
+
+      const { status, message, newProduct, newImages } = await adminService.postProduct(productInfo, productImage)
+      return res.json({
+        status,
+        message,
+        newProduct,
+        newImages
       })
     } catch (error) {
       next(error)
