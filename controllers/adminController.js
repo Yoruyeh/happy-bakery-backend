@@ -35,13 +35,16 @@ const adminController = {
     }
   },
 
-  getAdminSetting: async (req, res, next) => {
+  putPassword: async (req, res, next) => {
     try {
-      if (!req.user) throw new CError('Admin data not found', 400)
-      if (!req.isAuthenticated()) throw new CError('Admin not authenticated', 401)
-
       const currentAdminId = req.user.id
-      console.log(currentAdminId)
+      const data = req.body
+      const { status, message, admin } = await adminService.putPassword(currentAdminId, data)
+      return res.json({
+        status,
+        message,
+        admin
+      })
     } catch (error) {
       next(error)
     }

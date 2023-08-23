@@ -19,6 +19,6 @@ router.get('/product/:id', authenticatedAdmin, adminController.getProduct)
 router.post('/product/image', authenticatedAdmin, multiUpload, adminController.postProductImage)
 
 // admin info
-router.get('/', authenticatedAdmin, adminController.getAdminSetting)
+router.put('/password', authenticatedAdmin, adminController.putPassword)
 
 module.exports = router
