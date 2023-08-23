@@ -1,6 +1,6 @@
 const cartService = require('../services/cartService')
 const { CError } = require('../middleware/error-handler')
-const { isValidItem, isValidateId, isValidPositiveInteger } = require('../helpers/validationHelper')
+const { isValidItem, isValidateId, isValidPositiveInteger } = require('../helpers/validation-helper')
 
 const cartController = {
 

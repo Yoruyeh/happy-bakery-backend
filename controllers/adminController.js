@@ -1,6 +1,7 @@
 const adminService = require('../services/adminService')
 const { CError } = require('../middleware/error-handler')
-const { isValidateId } = require('../helpers/validationHelper')
+const { isValidateId } = require('../helpers/validation-helper')
+const { imgurFileHandler } = require('../helpers/file-helper')
 
 const adminController = {
 
@@ -43,6 +44,22 @@ const adminController = {
       console.log(currentAdminId)
     } catch (error) {
       next(error)
+    }
+  },
+
+  postProductImage: async (req, res, next) => {
+    try {
+      const { files } = req
+
+      const image = files && JSON.stringify(files) !== '{}' ? await imgurFileHandler(files) : null
+
+      res.status(200).json({
+        status: 'success',
+        message: 'successfully upload img',
+        image
+      })
+    } catch (err) {
+      next(err)
     }
   }
 }

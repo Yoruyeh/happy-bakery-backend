@@ -1,6 +1,6 @@
 const productService = require('../services/productService')
 const { CError } = require('../middleware/error-handler')
-const { isValidateId } = require('../helpers/validationHelper')
+const { isValidateId } = require('../helpers/validation-helper')
 
 const productController = {
 

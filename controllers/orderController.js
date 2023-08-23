@@ -1,7 +1,7 @@
 const orderService = require('../services/orderService')
 const validator = require('validator')
 const { CError } = require('../middleware/error-handler')
-const { isValidateId, isValidPositiveInteger, isValidItem } = require('../helpers/validationHelper')
+const { isValidateId, isValidPositiveInteger, isValidItem } = require('../helpers/validation-helper')
 
 const orderController = {
 

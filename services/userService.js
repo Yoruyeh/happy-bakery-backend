@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const validator = require('validator')
-const { dateFormate } = require('../helpers/dateHelper')
+const { dateFormate } = require('../helpers/date-helper')
 const sequelize = require('sequelize')
 const { CError } = require('../middleware/error-handler')
 const { User, Order, Cart } = require('../models')

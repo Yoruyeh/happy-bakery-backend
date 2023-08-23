@@ -1,6 +1,7 @@
 // user routes
 const express = require('express')
 const router = express.Router()
+const { multiUpload } = require('../../middleware/multer')
 
 // import auth
 const { authenticatedAdmin } = require('../../middleware/api-auth')
@@ -13,6 +14,9 @@ router.post('/signin', adminController.signIn)
 
 // product
 router.get('/product/:id', authenticatedAdmin, adminController.getProduct)
+
+// product image
+router.post('/product/image', authenticatedAdmin, multiUpload, adminController.postProductImage)
 
 // admin info
 router.get('/', authenticatedAdmin, adminController.getAdminSetting)
