@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
-const { User, Product, Category, ProductImage } = require('../models')
+const { sequelize, User, Product, Category, ProductImage } = require('../models')
 const { CError } = require('../middleware/error-handler')
 
 const adminService = {
@@ -97,54 +97,131 @@ const adminService = {
     const { name, description, category, cover, sku, quantity, priceRegular, priceSale } = productInfo
 
     // check category
-    const DEFAULT_CATEGORY_ID = 1
-    let categoryId = DEFAULT_CATEGORY_ID
+    let categoryId = await adminService.checkCategory(category)
+
+    const transaction = await sequelize.transaction()
+
+    try {
+      // create product
+      const newProduct = await Product.create({
+        name,
+        categoryId,
+        cover,
+        description,
+        sku,
+        stockQuantity: quantity,
+        priceRegular,
+        priceSale
+      }, { transaction })
+
+      // create product images
+      const productId = newProduct.id
+      const newImages = await Promise.all(
+        productImages.map(async (image) => {
+          return ProductImage.create({
+            productId,
+            name: image.name,
+            imagePath: image.link
+          }, { transaction })
+        })
+      )
+
+      await transaction.commit()
+
+      if (newProduct && newImages) {
+        return {
+          status: 'success',
+          message: 'create product succeed',
+          newProduct,
+          newImages
+        }
+      } else {
+        return {
+          status: 'error',
+          message: 'create product fail'
+        }
+      }
+    } catch (error) {
+      await transaction.rollback()
+      throw error
+    }
+  },
+
+  putProduct: async (id, productInfo, productImages) => {
+    const { name, description, category, cover, sku, quantity, priceRegular, priceSale } = productInfo
+
+    // check category
+    let categoryId = await adminService.checkCategory(category)
+
+    try {
+      // start a transaction
+      const transaction = await sequelize.transaction()
+
+      // update product
+      const numUpdatedProducts = await Product.update(
+        {
+          name,
+          categoryId,
+          cover,
+          description,
+          sku,
+          stockQuantity: quantity,
+          priceRegular,
+          priceSale
+        },
+        { where: { id }, transaction }
+      )
+
+      // delete old product images
+      const numDestroyedImages = await ProductImage.destroy({ where: { product_id: id }, transaction })
+
+      // create new product images
+      await Promise.all(
+        productImages.map(async (image) => {
+          return ProductImage.create(
+            {
+              productId: id,
+              name: image.name,
+              imagePath: image.link,
+            },
+            { transaction }
+          )
+        })
+      )
+
+      // commit the transaction
+      await transaction.commit()
+
+      // return data
+      if (numUpdatedProducts > 0 && numDestroyedImages > 0) {
+        return {
+          status: 'success',
+          message: 'update product succeed'
+        }
+      } else {
+        return {
+          status: 'error',
+          message: 'update product fail'
+        }
+      }
+    } catch (error) {
+      // rollback the transaction
+      await transaction.rollback()
+
+      throw error
+    }
+  },
+
+  checkCategory: async (category) => {
     const categoryData = await Category.findOne({
       where: { name: category }
     })
-    if (categoryData) {
-      categoryId = categoryData.id
-    } else {
+
+    if (!categoryData) {
       throw new CError(`cannot find category ${category}`, 400)
     }
 
-    // create product
-    const newProduct = await Product.create({
-      name,
-      categoryId,
-      cover,
-      description,
-      sku,
-      stockQuantity: quantity,
-      priceRegular,
-      priceSale
-    })
-
-    // create product image
-    const productId = newProduct.id
-    const newImages = await Promise.all(
-      productImages.map(async (image) => {
-        return ProductImage.create({
-          productId,
-          name: image.name,
-          imagePath: image.link,
-        })
-      }))
-
-    // return data
-    if (newProduct !== null || newImages !== null) {
-      return {
-        status: 'success',
-        message: 'create product succeed',
-        newProduct,
-        newImages
-      }
-    } else {
-      return {
-        status: 'error',
-        message: 'create product fail'
-      }
-    }
+    return categoryData.id
   }
 }
 

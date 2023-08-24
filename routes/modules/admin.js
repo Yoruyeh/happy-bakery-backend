@@ -17,6 +17,7 @@ router.post('/product/image', authenticatedAdmin, multiUpload, adminController.p
 
 // product
 router.get('/product/:id', authenticatedAdmin, adminController.getProduct)
+router.put('/product/:id', authenticatedAdmin, adminController.putProduct)
 router.post('/product', authenticatedAdmin, adminController.postProduct)
 
 // admin info
