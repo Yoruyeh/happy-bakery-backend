@@ -12,12 +12,12 @@ const adminController = require('../../controllers/adminController')
 // admin login
 router.post('/signin', adminController.signIn)
 
-// product
-router.get('/product/:id', authenticatedAdmin, adminController.getProduct)
-router.post('/product/:id', authenticatedAdmin, adminController.postProduct)
-
 // product image
 router.post('/product/image', authenticatedAdmin, multiUpload, adminController.postProductImage)
+
+// product
+router.get('/product/:id', authenticatedAdmin, adminController.getProduct)
+router.post('/product', authenticatedAdmin, adminController.postProduct)
 
 // admin info
 router.put('/password', authenticatedAdmin, adminController.putPassword)

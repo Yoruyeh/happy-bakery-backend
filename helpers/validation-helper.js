@@ -48,8 +48,8 @@ const validProduct = (product) => {
 
 // check admin post product image
 const validateImages = (images) => {
-  if (!Array.isArray(images)) {
-    throw new Error("Invalid images format")
+  if (!Array.isArray(images) || images.length !== 3) {
+    throw new Error("Invalid images array length")
   }
 
   for (const image of images) {
