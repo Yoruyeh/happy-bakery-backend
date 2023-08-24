@@ -57,12 +57,28 @@ const adminController = {
   putProduct: async (req, res, next) => {
     try {
       const { id } = req.params
+      if (!isValidateId(id)) throw new CError('product id invalid', 400)
       const { productInfo, productImage } = req.body
       if (!productInfo || !productImage) throw new CError('invalid input', 400)
       if (!validProduct(productInfo)) throw new CError('invalid product info', 400)
       if (!validateImages(productImage)) throw new CError('invalid product image', 400)
 
       const { status, message } = await adminService.putProduct(id, productInfo, productImage)
+      return res.json({
+        status,
+        message
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  deleteProduct: async (req, res, next) => {
+    try {
+      const { id } = req.params
+      if (!isValidateId(id)) throw new CError('product id invalid', 400)
+
+      const { status, message } = await adminService.deleteProduct(id)
       return res.json({
         status,
         message

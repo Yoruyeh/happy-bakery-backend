@@ -212,6 +212,40 @@ const adminService = {
     }
   },
 
+  deleteProduct: async (id) => {
+    const product = await Product.findOne({ where: { id } })
+    if (!product) throw new Error('no product found')
+
+    try {
+      // start a transaction
+      const transaction = await sequelize.transaction()
+
+      const numDestroyedImages = await ProductImage.destroy({ where: { product_id: id }, transaction })
+      const numDestroyedProduct = await Product.destroy({ where: { id }, transaction })
+
+      // commit the transaction
+      await transaction.commit()
+
+      // return data
+      if (numDestroyedProduct > 0 && numDestroyedImages > 0) {
+        return {
+          status: 'success',
+          message: 'delete product succeed'
+        }
+      } else {
+        return {
+          status: 'error',
+          message: 'delete product fail'
+        }
+      }
+    } catch (error) {
+      // rollback the transaction
+      await transaction.rollback()
+
+      throw error
+    }
+  },
+
   checkCategory: async (category) => {
     const categoryData = await Category.findOne({
       where: { name: category }
