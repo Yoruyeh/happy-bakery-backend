@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 /** @type {import('sequelize').QueryInterface} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -49,6 +49,9 @@ module.exports = {
       shipping_method: {
         type: Sequelize.STRING
       },
+      note: {
+        type: Sequelize.STRING
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE
@@ -57,10 +60,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    });
+    })
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Orders');
+    await queryInterface.dropTable('Orders')
   }
-};
+}

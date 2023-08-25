@@ -130,6 +130,18 @@ const adminController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  getOrder: async (req, res, next) => {
+    try {
+      const { id } = req.params
+      if (!isValidateId(id)) throw new CError('product id invalid', 400)
+
+      const { status, message, order } = await adminService.getOrder(id)
+      res.json({ status, message, order })
+    } catch (error) {
+      next(error)
+    }
   }
 }
 module.exports = adminController

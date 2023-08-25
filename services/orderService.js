@@ -1,14 +1,10 @@
 const sequelize = require('sequelize')
 const { Order, OrderItem, Product, Cart, CartItem } = require('../models')
+const { calShippingFee } = require("../helpers/fee-helper")
 
 const orderService = {
 
   getOrder: async (id) => {
-
-    const shippingFeeMap = {
-      store: 0,
-      standard: 60,
-    }
 
     const order = await Order.findByPk(id, {
       attributes: [
@@ -35,7 +31,7 @@ const orderService = {
     })
 
     const item_count = order.OrderItems.length
-    const shipping_fee = shippingFeeMap[order.shipping_method] || 0
+    const shipping_fee = calShippingFee(order.dataValues.shipping_method)
     order.setDataValue('item_count', item_count)
     order.setDataValue('shipping_fee', shipping_fee)
 

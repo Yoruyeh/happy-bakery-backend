@@ -22,6 +22,9 @@ router.delete('/product/:id', authenticatedAdmin, adminController.deleteProduct)
 router.get('/products', authenticatedAdmin, adminController.getProducts)
 router.post('/product', authenticatedAdmin, adminController.postProduct)
 
+// order
+router.get('/order/:id', authenticatedAdmin, adminController.getOrder)
+
 // admin info
 router.put('/password', authenticatedAdmin, adminController.putPassword)
 

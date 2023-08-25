@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const { Op } = require('sequelize')
-const { sequelize, User, Product, Category, ProductImage, OrderItem } = require('../models')
+const { sequelize, User, Product, Category, ProductImage, Order, OrderItem } = require('../models')
 const { CError } = require('../middleware/error-handler')
+const { calShippingFee } = require("../helpers/fee-helper")
 const productService = require('./productService')
 
 const adminService = {
@@ -319,6 +320,47 @@ const adminService = {
       return {
         status: 'success',
         message: 'no products found'
+      }
+    }
+  },
+  getOrder: async (id) => {
+    const order = await Order.findByPk(id, {
+      attributes: [
+        'id',
+        [sequelize.literal('DATE(order_date)'), 'order_date'],
+        [sequelize.fn('CONCAT', sequelize.col('first_name'), ' ', sequelize.col('last_name')), 'customer_name'],
+        'email',
+        'phone',
+        'shipping_method',
+        'payment_method',
+        'status',
+        'address',
+        'note',
+        'total_price',
+      ],
+      include: {
+        model: OrderItem,
+        attributes: ['quantity', 'price_each'],
+        include: {
+          model: Product,
+          attributes: ['name', 'cover']
+        }
+      }
+    })
+
+    const shipping_fee = calShippingFee(order.dataValues.shipping_method)
+    order.setDataValue('shipping_fee', shipping_fee)
+
+    if (order !== null) {
+      return {
+        status: 'success',
+        message: 'order retrieved succeed',
+        order
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no order found'
       }
     }
   }
