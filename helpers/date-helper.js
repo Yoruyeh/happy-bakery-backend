@@ -1,3 +1,5 @@
+const { format } = require('date-fns')
+
 // formate date
 const dateFormate = (dateString) => {
   const date = new Date(dateString)
@@ -7,6 +9,13 @@ const dateFormate = (dateString) => {
   return `${year}-${month}-${day}`
 }
 
+// formate date to "Jan 22nd, 2022"
+const dateFormateMonth = (dateString) => {
+  const formattedDate = format(new Date(dateString), "MMM do, yyyy")
+  return formattedDate
+}
+
 module.exports = {
-  dateFormate
+  dateFormate,
+  dateFormateMonth
 }

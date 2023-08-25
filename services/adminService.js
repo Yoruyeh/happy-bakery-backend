@@ -1,12 +1,13 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
-const { Op } = require('sequelize')
 const { sequelize, User, Product, Category, ProductImage, Order, OrderItem } = require('../models')
+const productService = require('./productService')
 const { CError } = require('../middleware/error-handler')
 const { calShippingFee } = require('../helpers/fee-helper')
-const productService = require('./productService')
+const { dateFormateMonth } = require('../helpers/date-helper')
 
 const adminService = {
+
   signIn: async (email, password) => {
     const user = await User.findOne({ where: { email } })
     if (!user) {
@@ -323,6 +324,7 @@ const adminService = {
       }
     }
   },
+
   getOrder: async (id) => {
     const order = await Order.findByPk(id, {
       attributes: [
@@ -386,6 +388,51 @@ const adminService = {
       return {
         status: 'error',
         message: error.message
+      }
+    }
+  },
+
+  getOrders: async (page, orderStatus) => {
+    // define display products per page
+    const perPage = 8
+
+    const queryOptions = {
+      where: {},
+      order: [],
+      limit: perPage,
+      offset: (page - 1) * perPage,
+      attributes: [
+        'id',
+        [sequelize.literal('DATE(order_date)'), 'order_date'],
+        'payment_method',
+        [sequelize.fn('CONCAT', sequelize.col('first_name'), ' ', sequelize.col('last_name')), 'customer_name'],
+        'status',
+        'total_price'
+      ],
+      raw: true,
+      nest: true
+    }
+    if (orderStatus) {
+      queryOptions.where.status = orderStatus
+    }
+
+    const orders = await Order.findAll(queryOptions)
+
+    // formate data
+    orders.forEach(order => {
+      order.order_date = dateFormateMonth(order.order_date)
+    })
+
+    if (orders.length) {
+      return {
+        status: 'success',
+        message: 'orders retrieved succeed',
+        orders
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no orders found'
       }
     }
   }

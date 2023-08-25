@@ -20,6 +20,34 @@ const adminController = {
     }
   },
 
+  putPassword: async (req, res, next) => {
+    try {
+      const currentAdminId = req.user.id
+      const data = req.body
+      const { status, message, admin } = await adminService.putPassword(currentAdminId, data)
+      return res.json({
+        status,
+        message,
+        admin
+      })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  getProducts: async (req, res, next) => {
+    try {
+      let { category, page, sort } = req.query
+      // page should be at least 1
+      page = page >= 1 ? page : 1
+
+      const { status, message, productCount, products } = await adminService.getProducts(category, page, sort)
+      res.json({ status, message, productCount, products })
+    } catch (error) {
+      next(error)
+    }
+  },
+
   getProduct: async (req, res, next) => {
     try {
       const { id } = req.params
@@ -88,21 +116,6 @@ const adminController = {
     }
   },
 
-  putPassword: async (req, res, next) => {
-    try {
-      const currentAdminId = req.user.id
-      const data = req.body
-      const { status, message, admin } = await adminService.putPassword(currentAdminId, data)
-      return res.json({
-        status,
-        message,
-        admin
-      })
-    } catch (error) {
-      next(error)
-    }
-  },
-
   postProductImage: async (req, res, next) => {
     try {
       const { files } = req
@@ -119,14 +132,17 @@ const adminController = {
     }
   },
 
-  getProducts: async (req, res, next) => {
-    try {
-      let { category, page, sort } = req.query
-      // page should be at least 1
-      page = page >= 1 ? page : 1
+  getOrders: async (req, res, next) => {
+    let { page, orderStatus } = req.query
+    // page should be at least 1
+    page = page >= 1 ? page : 1
+    if (orderStatus !== 'pending' && orderStatus !== 'canceled' && orderStatus !== 'delivered' && orderStatus !== '' && orderStatus !== undefined) {
+      throw new CError('status invalid', 400)
+    }
 
-      const { status, message, productCount, products } = await adminService.getProducts(category, page, sort)
-      res.json({ status, message, productCount, products })
+    try {
+      const { status, message, orders } = await adminService.getOrders(page, orderStatus)
+      res.json({ status, message, orders })
     } catch (error) {
       next(error)
     }

@@ -25,6 +25,7 @@ router.post('/product', authenticatedAdmin, adminController.postProduct)
 // order
 router.get('/order/:id', authenticatedAdmin, adminController.getOrder)
 router.put('/order/:id', authenticatedAdmin, adminController.putOrder)
+router.get('/orders', authenticatedAdmin, adminController.getOrders)
 
 // admin info
 router.put('/password', authenticatedAdmin, adminController.putPassword)
