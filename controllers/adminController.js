@@ -117,6 +117,19 @@ const adminController = {
     } catch (err) {
       next(err)
     }
+  },
+
+  getProducts: async (req, res, next) => {
+    try {
+      let { category, page, sort } = req.query
+      // page should be at least 1
+      page = page >= 1 ? page : 1
+
+      const { status, message, productCount, products } = await adminService.getProducts(category, page, sort)
+      res.json({ status, message, productCount, products })
+    } catch (error) {
+      next(error)
+    }
   }
 }
 module.exports = adminController
