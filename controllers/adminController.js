@@ -142,6 +142,20 @@ const adminController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  putOrder: async (req, res, next) => {
+    try {
+      const { id } = req.params
+      const { orderStatus, note } = req.body
+      if (!isValidateId(id)) throw new CError('product id invalid', 400)
+      if (!['pending', 'canceled', 'delivered'].includes(orderStatus)) throw new CError('status invalid', 400)
+
+      const { status, message } = await adminService.putOrder(id, orderStatus, note)
+      res.json({ status, message })
+    } catch (error) {
+      next(error)
+    }
   }
 }
 module.exports = adminController

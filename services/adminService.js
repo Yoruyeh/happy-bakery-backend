@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const { Op } = require('sequelize')
 const { sequelize, User, Product, Category, ProductImage, Order, OrderItem } = require('../models')
 const { CError } = require('../middleware/error-handler')
-const { calShippingFee } = require("../helpers/fee-helper")
+const { calShippingFee } = require('../helpers/fee-helper')
 const productService = require('./productService')
 
 const adminService = {
@@ -361,6 +361,31 @@ const adminService = {
       return {
         status: 'success',
         message: 'no order found'
+      }
+    }
+  },
+
+  putOrder: async (id, orderStatus, note) => {
+    try {
+      const order = await Order.findByPk(id)
+      if (!order) throw new Error('order not exists')
+
+      // put order
+      await Order.update(
+        {
+          status: orderStatus,
+          note
+        },
+        { where: { id } }
+      )
+      return {
+        status: 'success',
+        message: 'put order succeed',
+      }
+    } catch (error) {
+      return {
+        status: 'error',
+        message: error.message
       }
     }
   }
