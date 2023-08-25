@@ -43,14 +43,13 @@ const productController = {
     }
   },
 
-  getPopularProduct: async (req, res, next) => {
+  getPopularProducts: async (req, res, next) => {
     try {
-      const { top } = req.query
-      if (top !== undefined && !isValidateId(top)) throw new CError('invalid product id', 400)
-      const topCount = top || 5
+      let { top } = req.query
+      top = top >= 3 ? parseInt(top, 10) : 5
 
-      const { status, message, product } = await productService.getPopularProducts(topCount)
-      res.json({ status, message, product })
+      const { status, message, products } = await productService.getPopularProducts(top)
+      res.json({ status, message, products })
     } catch (error) {
       next(error)
     }

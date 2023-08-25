@@ -9,7 +9,7 @@ const { authenticated } = require('../../middleware/api-auth')
 const productController = require('../../controllers/productController')
 
 // product view
-router.get('/popular', productController.getPopularProduct)
+router.get('/popular', productController.getPopularProducts)
 router.get('/search', productController.searchProducts)
 router.get('/:id', productController.getProduct)
 router.get('/', productController.getProducts)

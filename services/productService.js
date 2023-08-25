@@ -135,8 +135,37 @@ const productService = {
     }
   },
 
-  getPopularProducts: async (topCount) => {
-    // tbc
+  getPopularProducts: async (top) => {
+    const queryOptions = {
+      order: [[sequelize.literal('salesCount'), 'DESC']],
+      limit: top,
+      attributes: [
+        'id',
+        'name',
+        'cover',
+        'price_regular',
+        [
+          sequelize.cast(sequelize.literal('(SELECT SUM(quantity) FROM `OrderItems` WHERE `OrderItems`.`product_id` = `Product`.`id`)'), 'SIGNED'),
+          'salesCount'
+        ]
+      ],
+      raw: true,
+      nest: true
+    }
+
+    const products = await Product.findAll(queryOptions)
+    if (products.length) {
+      return {
+        status: 'success',
+        message: 'top products retrieved succeed',
+        products
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no products found'
+      }
+    }
   }
 }
 
