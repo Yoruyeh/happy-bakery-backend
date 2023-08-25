@@ -24,6 +24,11 @@ const isValidItem = (item) => {
   )
 }
 
+// check date
+const isValidDate = (dateString) => {
+  return /^\d{4}-\d{2}-\d{2}$/.test(dateString)
+}
+
 // check admin post product
 const validProduct = (product) => {
   const { name, description, category, cover, sku, quantity, priceRegular, priceSale } = product
@@ -71,6 +76,7 @@ module.exports = {
   isValidateId,
   isValidPositiveInteger,
   isValidItem,
+  isValidDate,
   validProduct,
   validateImages
 }

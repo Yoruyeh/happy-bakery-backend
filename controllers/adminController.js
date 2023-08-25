@@ -1,6 +1,7 @@
 const adminService = require('../services/adminService')
 const { CError } = require('../middleware/error-handler')
-const { isValidateId, validProduct, validateImages } = require('../helpers/validation-helper')
+const { isValidateId, isValidDate, validProduct, validateImages } = require('../helpers/validation-helper')
+const { getOneWeekAgo, getToday } = require('../helpers/date-helper')
 const { imgurFileHandler } = require('../helpers/file-helper')
 
 const adminController = {
@@ -133,15 +134,23 @@ const adminController = {
   },
 
   getOrders: async (req, res, next) => {
-    let { page, orderStatus } = req.query
-    // page should be at least 1
+    let { page, perPage, orderStatus, startDate, endDate } = req.query
+    // set page, perPage default
     page = page >= 1 ? page : 1
+    perPage = perPage >= 5 ? parseInt(perPage, 10) : 10
     if (orderStatus !== 'pending' && orderStatus !== 'canceled' && orderStatus !== 'delivered' && orderStatus !== '' && orderStatus !== undefined) {
       throw new CError('status invalid', 400)
     }
+    // set default date
+    if (!isValidDate(startDate)) {
+      startDate = getOneWeekAgo(startDate)
+    }
+    if (!isValidDate(endDate)) {
+      endDate = getToday(endDate)
+    }
 
     try {
-      const { status, message, orders } = await adminService.getOrders(page, orderStatus)
+      const { status, message, orders } = await adminService.getOrders(page, perPage, orderStatus, startDate, endDate)
       res.json({ status, message, orders })
     } catch (error) {
       next(error)

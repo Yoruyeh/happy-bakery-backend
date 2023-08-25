@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
+const { Op } = require('sequelize')
 const { sequelize, User, Product, Category, ProductImage, Order, OrderItem } = require('../models')
 const productService = require('./productService')
 const { CError } = require('../middleware/error-handler')
@@ -392,12 +393,13 @@ const adminService = {
     }
   },
 
-  getOrders: async (page, orderStatus) => {
-    // define display products per page
-    const perPage = 8
-
+  getOrders: async (page, perPage, orderStatus, startDate, endDate) => {
     const queryOptions = {
-      where: {},
+      where: {
+        order_date: {
+          [Op.between]: [startDate, endDate]
+        }
+      },
       order: [],
       limit: perPage,
       offset: (page - 1) * perPage,
