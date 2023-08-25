@@ -10,6 +10,7 @@ const productController = require('../../controllers/productController')
 
 // product view
 router.get('/popular', productController.getPopularProduct)
+router.get('/search', productController.searchProducts)
 router.get('/:id', productController.getProduct)
 router.get('/', productController.getProducts)
 

@@ -29,6 +29,20 @@ const productController = {
     }
   },
 
+  searchProducts: async (req, res, next) => {
+    try {
+      const { keyword } = req.query
+      if (!keyword || typeof keyword !== "string" || keyword.length < 2) {
+        throw new Error("Invalid search keyword")
+      }
+
+      const { status, message, products } = await productService.searchProducts(keyword)
+      res.json({ status, message, products })
+    } catch (error) {
+      next(error)
+    }
+  },
+
   getPopularProduct: async (req, res, next) => {
     try {
       const { top } = req.query

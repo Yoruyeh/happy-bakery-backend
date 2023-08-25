@@ -1,5 +1,6 @@
 const sequelize = require('sequelize')
 const { Category, Product, ProductImage } = require('../models')
+const { Op } = require('sequelize')
 
 const productService = {
   getProducts: async (category, page, sort) => {
@@ -97,6 +98,39 @@ const productService = {
       return {
         status: 'success',
         message: 'no product found'
+      }
+    }
+  },
+
+  searchProducts: async (keyword) => {
+    const products = await Product.findAll({
+      where: {
+        [Op.or]: [
+          {
+            name: {
+              [Op.like]: `%${keyword}%`
+            }
+          },
+          {
+            description: {
+              [Op.like]: `%${keyword}%`
+            }
+          }
+        ]
+      },
+      attributes: ['id', 'name', 'cover']
+    })
+
+    if (products.length > 0) {
+      return {
+        status: 'success',
+        message: 'products retrieved succeed',
+        products
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no products found'
       }
     }
   },
