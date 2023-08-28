@@ -76,7 +76,7 @@ const adminService = {
         },
         {
           model: ProductImage,
-          attributes: ['name', 'image_path', 'is_display'],
+          attributes: ['id', 'name', 'image_path', 'is_display'],
           required: false
         }
       ],
@@ -126,7 +126,8 @@ const adminService = {
           return ProductImage.create({
             productId,
             name: image.name,
-            imagePath: image.link
+            imagePath: image.link,
+            isDisplay: true
           }, { transaction })
         })
       )
