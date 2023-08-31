@@ -150,8 +150,8 @@ const adminController = {
     }
 
     try {
-      const { status, message, orders } = await adminService.getOrders(page, perPage, orderStatus, startDate, endDate)
-      res.json({ status, message, orders })
+      const { status, message, orderCount, orders } = await adminService.getOrders(page, perPage, orderStatus, startDate, endDate)
+      res.json({ status, message, orderCount, orders })
     } catch (error) {
       next(error)
     }

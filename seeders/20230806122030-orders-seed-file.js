@@ -16,7 +16,7 @@ module.exports = {
         first_name: faker.person.firstName(),
         last_name: faker.person.lastName(),
         email: faker.internet.email(),
-        phone: faker.phone.number('09##-###-###'),
+        phone: faker.phone.number('09########'),
         address: faker.location.city(),
         payment_method: faker.helpers.arrayElement(['PayPal', 'ECPAY', 'NewebPay']),
         shipping_method: faker.helpers.arrayElement(['standard', 'store']),

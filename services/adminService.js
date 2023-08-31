@@ -421,6 +421,9 @@ const adminService = {
 
     const orders = await Order.findAll(queryOptions)
 
+    // get order count
+    const orderCount = await adminService.getOrderCount()
+
     // formate data
     orders.forEach(order => {
       order.order_date = dateFormateMonth(order.order_date)
@@ -430,6 +433,7 @@ const adminService = {
       return {
         status: 'success',
         message: 'orders retrieved succeed',
+        orderCount,
         orders
       }
     } else {
@@ -438,6 +442,13 @@ const adminService = {
         message: 'no orders found'
       }
     }
+  },
+
+  getOrderCount: async () => {
+    let totalCount
+    totalCount = await Order.count()
+
+    return totalCount
   }
 }
 
