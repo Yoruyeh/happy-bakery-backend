@@ -141,6 +141,7 @@ const productService = {
       limit: top,
       attributes: [
         'id',
+        'category_id',
         'name',
         'cover',
         'price_regular',
@@ -149,6 +150,10 @@ const productService = {
           'salesCount'
         ]
       ],
+      include: {
+        model: Category,
+        attributes: ['name']
+      },
       raw: true,
       nest: true
     }
