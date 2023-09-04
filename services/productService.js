@@ -3,7 +3,7 @@ const { Category, Product, ProductImage } = require('../models')
 const { Op } = require('sequelize')
 
 const productService = {
-  getProducts: async (category, page, sort) => {
+  getProducts: async (category, page, sort, keyword) => {
     // define display products per page
     const perPage = 9
     // define sorting options
@@ -42,6 +42,20 @@ const productService = {
     }
     if (sort && sortOptions[sort]) {
       queryOptions.order.push(sortOptions[sort])
+    }
+    if (keyword) {
+      queryOptions.where[Op.or] = [
+        {
+          name: {
+            [Op.like]: `%${keyword}%`
+          }
+        },
+        {
+          description: {
+            [Op.like]: `%${keyword}%`
+          }
+        }
+      ]
     }
 
     const products = await Product.findAll(queryOptions)
@@ -118,7 +132,11 @@ const productService = {
           }
         ]
       },
-      attributes: ['id', 'name', 'cover']
+      attributes: ['id', 'category_id', 'name', 'cover'],
+      include: {
+        model: Category,
+        attributes: ['name']
+      }
     })
 
     if (products.length > 0) {
