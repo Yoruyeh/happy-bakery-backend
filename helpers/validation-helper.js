@@ -34,8 +34,8 @@ const validProduct = (product) => {
   const { name, description, category, cover, sku, quantity, priceRegular, priceSale } = product
   let err = ''
 
-  if (name === undefined || typeof name !== 'string' || name.length > 100) err += 'invalid product name. '
-  if (description === undefined || typeof description !== 'string' || description.length > 500) err += 'invalid product description. '
+  if (name === undefined || typeof name !== 'string' || countCharacters(name) > 100) err += 'invalid product name. '
+  if (description === undefined || typeof description !== 'string' || countCharacters(description) > 500) err += 'invalid product description. '
   if (cover === undefined || typeof cover !== 'string') err += 'invalid product cover. '
   if (category === undefined || typeof category !== 'string') err += 'invalid product category. '
 
@@ -49,6 +49,20 @@ const validProduct = (product) => {
     isValidPositiveInteger(priceRegular) &&
     isValidPositiveInteger(priceSale)
   )
+}
+
+const countCharacters = (str) => {
+    let count = 0
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charAt(i)
+        // chinese Unicode
+        if (/[\u4e00-\u9fa5]/.test(char)) {
+            count += 1
+        } else if (/^[A-Za-z0-9]$/.test(char)) { // english and num
+            count += 1
+        }
+    }
+    return count
 }
 
 // check admin post product image
