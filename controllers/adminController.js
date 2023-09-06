@@ -38,11 +38,14 @@ const adminController = {
 
   getProducts: async (req, res, next) => {
     try {
-      let { category, page, sort } = req.query
+      let { category, page, sort, keyword } = req.query
       // page should be at least 1
       page = page >= 1 ? page : 1
+      if (keyword && (typeof keyword !== "string" || keyword.length < 2)) {
+        throw new Error("Invalid search keyword")
+      }
 
-      const { status, message, productCount, products } = await adminService.getProducts(category, page, sort)
+      const { status, message, productCount, products } = await adminService.getProducts(category, page, sort, keyword)
       res.json({ status, message, productCount, products })
     } catch (error) {
       next(error)

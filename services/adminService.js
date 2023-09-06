@@ -264,7 +264,7 @@ const adminService = {
     return categoryData.id
   },
 
-  getProducts: async (category, page, sort) => {
+  getProducts: async (category, page, sort, keyword) => {
     // define display products per page
     const perPage = 12
     // define sorting options
@@ -309,6 +309,20 @@ const adminService = {
     }
     if (sort && sortOptions[sort]) {
       queryOptions.order.push(sortOptions[sort])
+    }
+    if (keyword) {
+      queryOptions.where[Op.or] = [
+        {
+          name: {
+            [Op.like]: `%${keyword}%`
+          }
+        },
+        {
+          description: {
+            [Op.like]: `%${keyword}%`
+          }
+        }
+      ]
     }
 
     const products = await Product.findAll(queryOptions)
