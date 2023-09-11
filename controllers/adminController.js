@@ -21,6 +21,20 @@ const adminController = {
     }
   },
 
+  getAdminSetting: async (req, res, next) => {
+    try {
+      if (!req.user) throw new CError('Admin data not found', 400)
+      if (!req.isAuthenticated()) throw new CError('Admin not authenticated', 401)
+      if (req.user.isAdmin !== true) throw new CError('Admin only', 400)
+
+      const currentAdminId = req.user.id
+      const admin = await adminService.getAdminSetting(currentAdminId)
+      return res.json({ admin })
+    } catch (error) {
+      next(error)
+    }
+  },
+
   putPassword: async (req, res, next) => {
     try {
       const currentAdminId = req.user.id

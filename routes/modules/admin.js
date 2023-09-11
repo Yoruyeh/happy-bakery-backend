@@ -29,5 +29,6 @@ router.get('/orders', authenticatedAdmin, adminController.getOrders)
 
 // admin info
 router.put('/password', authenticatedAdmin, adminController.putPassword)
+router.get('/', authenticatedAdmin, adminController.getAdminSetting)
 
 module.exports = router
