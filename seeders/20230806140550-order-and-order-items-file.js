@@ -19,11 +19,9 @@ module.exports = {
       }
 
       await Order.update(
-        { total_price: totalOrderPrice },
+        { totalPrice: totalOrderPrice },
         { where: { id: order.id } }
       )
-
-      console.log(`Order ${order.id}: Total Price Updated to ${totalOrderPrice}`)
     }
   },
   down: async (queryInterface, Sequelize) => {

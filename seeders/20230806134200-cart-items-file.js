@@ -1,5 +1,3 @@
-// PENDING: price_each
-
 'use strict'
 const { faker } = require('@faker-js/faker')
 const { Product } = require('../models')

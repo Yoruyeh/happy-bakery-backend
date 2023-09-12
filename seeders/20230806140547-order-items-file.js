@@ -12,7 +12,7 @@ module.exports = {
       { type: queryInterface.sequelize.QueryTypes.SELECT }
     )
 
-    const orderItemsData = Array.from({ length: 300 }, () => {
+    const orderItemsData = Array.from({ length: 500 }, () => {
       const product = products[Math.floor(Math.random() * products.length)]
       const order = orders[Math.floor(Math.random() * orders.length)]
       return {

@@ -1,0 +1,353 @@
+[
+  {
+    "name": "Raspberry Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1557925923-33b27f891f88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80",
+    "stock_quantity": 60,
+    "price_regular": 450,
+    "price_sale": 300,
+    "description": "good cake"
+  },
+  {
+    "name": "Strawberry Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1596529267076-07866e3655cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Chocolate Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1089&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Blueberry Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1567327613485-fbc7bf196198?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Cheese Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1613680542429-3ff9a5e89900?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Mango Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1633834704595-63d830818bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Blackberry Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=729&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Fig Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=729&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Caramel Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1619867994225-724b17475220?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Lemon Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1534353875273-b5887cc1abf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Macarons Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1535110607694-ef23b879894a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Apple Pie",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1562007908-17c67e878c88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Matcha Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1658519921417-3862045da5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Chocolate Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    "stock_quantity": 60,
+    "price_regular": 450,
+    "price_sale": 300,
+    "description": "Indulge in our Chocolate Cupcake, a delectable treat that captivates the senses. Crafted with rich, velvety cocoa, each bite reveals a moist crumb and a melt-in-the-mouth experience. Topped with a luscious swirl of creamy chocolate frosting, it's the perfect blend of sweetness and cocoa intensity. A bite-sized luxury you won't resist!"
+  },
+  {
+    "name": "Lemon Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1608847567708-1e0b5a46eb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Blueberry Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1586941589370-9b4fd6688a6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Strawberry Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1563778084459-859099e48677?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Caramel Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1623246123320-0d6636755796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Cherry Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1623246123320-0d6636755796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Hazelnuts Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Party Cupcakes",
+    "category_id": 2,
+    "cover": "https://images.unsplash.com/photo-1474625342403-1b8a2c0f7215?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Chocolate Biscuits",
+    "category_id": 3,
+    "cover": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Oatmeal Cookie",
+    "category_id": 3,
+    "cover": "https://images.unsplash.com/photo-1600147573971-a2135dbff47e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Almond Cookie",
+    "category_id": 3,
+    "cover": "https://images.unsplash.com/photo-1436565121087-bb8d210c9752?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Matcha Cookie",
+    "category_id": 3,
+    "cover": "https://images.unsplash.com/photo-1582793908541-782dc529fd7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Peanut Cookie",
+    "category_id": 3,
+    "cover": "https://images.unsplash.com/photo-1607919965349-c3c790913de7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Original Croissants",
+    "category_id": 4,
+    "cover": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+    "stock_quantity": 60,
+    "price_regular": 450,
+    "price_sale": 300,
+    "description": "good cake"
+  },
+  {
+    "name": "Almond Croissants",
+    "category_id": 4,
+    "cover": "https://images.unsplash.com/photo-1586657263857-346c4b712ff5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Sea Salt Croissants",
+    "category_id": 4,
+    "cover": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1026&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Strawberry Cake",
+    "category_id": 4,
+    "cover": "https://images.unsplash.com/photo-1596529267076-07866e3655cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Sesame Croissants",
+    "category_id": 4,
+    "cover": "https://images.unsplash.com/photo-1574766777271-cf399aebb82e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Chocolate Croissants",
+    "category_id": 4,
+    "cover": "https://images.unsplash.com/photo-1572451480598-fb65b95a6ea0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Cheese Croissants",
+    "category_id": 4,
+    "cover": "https://images.unsplash.com/photo-1643627876160-fd3f62800e71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Chocolate donuts",
+    "category_id": 5,
+    "cover": "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Strawberry Donuts",
+    "category_id": 5,
+    "cover": "https://images.unsplash.com/photo-1533910534207-90f31029a78e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Frosted Donuts",
+    "category_id": 5,
+    "cover": "https://images.unsplash.com/photo-1497052254059-f3e0bf1a5133?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=747&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Strawberry Cake",
+    "category_id": 1,
+    "cover": "https://images.unsplash.com/photo-1596529267076-07866e3655cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Original Donuts",
+    "category_id": 5,
+    "cover": "https://images.unsplash.com/photo-1631143071707-6de7429d4d0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  },
+  {
+    "name": "Caramel Donuts",
+    "category_id": 5,
+    "cover": "https://images.unsplash.com/photo-1649035571623-57376e44d526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "stock_quantity": 80,
+    "price_regular": 500,
+    "price_sale": 350,
+    "description": "good cake"
+  }
+]
