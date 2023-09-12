@@ -40,6 +40,19 @@ const adminService = {
     }
   },
 
+  getAdminSetting: async (id) => {
+    return User.findByPk(id, {
+      attributes: [
+        'id',
+        'firstName',
+        'lastName',
+        'email',
+      ],
+      raw: true,
+      nest: true
+    })
+  },
+
   putPassword: async (id, data) => {
     const { currentPW, newPW, confirmPW } = data
 
