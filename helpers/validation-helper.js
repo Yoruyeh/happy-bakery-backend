@@ -12,6 +12,10 @@ const isValidPositiveInteger = (value) => {
   return Number.isInteger(value) && value > 0
 }
 
+const isValidInteger = (value) => {
+  return Number.isInteger(value) && value >= 0
+}
+
 // check order item id, quantity, price
 const isValidItem = (item) => {
   return (
@@ -19,7 +23,7 @@ const isValidItem = (item) => {
     item.quantity !== undefined &&
     item.price !== undefined &&
     isValidPositiveInteger(item.id) &&
-    isValidPositiveInteger(item.quantity) &&
+    isValidInteger(item.quantity) &&
     isValidPositiveInteger(item.price)
   )
 }
@@ -45,7 +49,7 @@ const validProduct = (product) => {
 
   return (
     isValidPositiveInteger(sku) &&
-    isValidPositiveInteger(quantity) &&
+    isValidInteger(quantity) &&
     isValidPositiveInteger(priceRegular) &&
     isValidPositiveInteger(priceSale)
   )
@@ -105,6 +109,7 @@ const validateImages = (images) => {
 
 module.exports = {
   isValidateId,
+  isValidInteger,
   isValidPositiveInteger,
   isValidItem,
   isValidDate,

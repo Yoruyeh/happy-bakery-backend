@@ -53,9 +53,55 @@ const orderService = {
     const { email, firstName, lastName, address, phone, shippingMethod } = shipment
     const { paymentMethod } = payment
 
-    // tbc: should check stock
+    // check stock and create order items
+    const orderItemsWithStockCheck = await orderService.checkStockAndCreateOrderItems(orderItems)
+
     // create order
-    const newOrder = await Order.create({
+    const newOrder = await orderService.createOrder(userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod)
+
+    // deduct stock
+    await orderService.deductStockQuantity(orderItemsWithStockCheck)
+
+    // clear cart
+    await orderService.clearCart(userId)
+
+    if (newOrder !== null) {
+      return {
+        status: 'success',
+        message: 'Create order succeed',
+        newOrder,
+        newOrderItem: orderItemsWithStockCheck
+      }
+    } else {
+      return {
+        status: 'error',
+        message: 'Create order fail'
+      }
+    }
+  },
+
+  checkStockAndCreateOrderItems: async (orderItems) => {
+    const orderItemsWithStockCheck = []
+    for (const item of orderItems) {
+      const product = await Product.findByPk(item.id)
+      if (!product) {
+        throw new Error(`Product with ID ${item.id} not found.`)
+      }
+      if (item.quantity > product.stockQuantity) {
+        throw new Error(`Not enough stock for product ${product.name}.`)
+      }
+
+      orderItemsWithStockCheck.push({
+        productId: item.id,
+        quantity: item.quantity,
+        priceEach: item.price
+      })
+    }
+    return orderItemsWithStockCheck
+  },
+
+  createOrder: async (userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod) => {
+    return await Order.create({
       userId,
       status: 'pending',
       firstName,
@@ -66,43 +112,28 @@ const orderService = {
       orderDate: new Date(),
       totalPrice: total,
       paymentMethod,
-      shippingMethod,
+      shippingMethod
     })
+  },
 
-    // create order items
-    const formattedOrderItems = orderItems.map(item => {
-      return {
-        productId: item.id,
-        quantity: item.quantity,
-        priceEach: item.price
-      }
-    })
-    const orderId = newOrder.dataValues.id
-    formattedOrderItems.forEach(item => {
-      item.orderId = orderId;
-    })
-    const newOrderItem = await OrderItem.bulkCreate(formattedOrderItems)
-
-    // clear cart
-    const cart = await Cart.findOne({ where: { userId } })
-    const cartId = cart.dataValues.id
-    await CartItem.destroy({ where: { cartId: cartId } })
-
-    // return data
-    if (newOrder !== null || newOrderItem !== null) {
-      return {
-        status: 'success',
-        message: 'create order succeed',
-        newOrder,
-        newOrderItem
-      }
-    } else {
-      return {
-        status: 'error',
-        message: 'create order fail'
+  deductStockQuantity: async (orderItems) => {
+    for (const item of orderItems) {
+      const product = await Product.findByPk(item.productId)
+      if (product) {
+        const newStockQuantity = product.stockQuantity - item.quantity
+        await product.update({ stockQuantity: newStockQuantity })
       }
     }
+  },
+
+  clearCart: async (userId) => {
+    const cart = await Cart.findOne({ where: { userId } })
+    if (cart) {
+      const cartId = cart.dataValues.id
+      await CartItem.destroy({ where: { cartId: cartId } })
+    }
   }
+
 }
 
 module.exports = orderService
