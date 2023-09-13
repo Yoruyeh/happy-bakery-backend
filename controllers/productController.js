@@ -1,6 +1,7 @@
 const productService = require('../services/productService')
 const { CError } = require('../middleware/error-handler')
-const { isValidateId } = require('../helpers/validation-helper')
+const { isValidateId, isValidDate } = require('../helpers/validation-helper')
+const { getOneWeekAgo, getToday } = require('../helpers/date-helper')
 
 const productController = {
 
@@ -48,10 +49,21 @@ const productController = {
 
   getPopularProducts: async (req, res, next) => {
     try {
-      let { top } = req.query
+      let { top, startDate, endDate, sort } = req.query
       top = top >= 3 ? parseInt(top, 10) : 5
 
-      const { status, message, products } = await productService.getPopularProducts(top)
+      // set default date
+      if (!isValidDate(startDate)) {
+        startDate = getOneWeekAgo(startDate)
+      }
+      if (!isValidDate(endDate)) {
+        endDate = getToday(endDate)
+      }
+      if (sort !== 'salesAmount' && sort !== 'salesQuantity' && sort !== '' && sort !== undefined) {
+        throw new CError('sort invalid', 400)
+      }
+
+      const { status, message, products } = await productService.getPopularProducts(top, startDate, endDate, sort)
       res.json({ status, message, products })
     } catch (error) {
       next(error)

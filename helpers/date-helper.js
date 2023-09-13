@@ -22,6 +22,7 @@ const getOneWeekAgo = () => {
 
 const getToday = () => {
   const today = new Date()
+  today.setDate(today.getDate() + 1)
   return today.toISOString().substring(0, 10)
 }
 

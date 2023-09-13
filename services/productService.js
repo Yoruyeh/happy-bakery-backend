@@ -153,9 +153,13 @@ const productService = {
     }
   },
 
-  getPopularProducts: async (top) => {
-    const queryOptions = {
-      order: [[sequelize.literal('salesCount'), 'DESC']],
+  getPopularProducts: async (top, startDate, endDate, sort) => {
+    let queryOptions = {
+      where: {
+        created_at: {
+          [Op.between]: [startDate, endDate]
+        }
+      },
       limit: top,
       attributes: [
         'id',
@@ -163,10 +167,6 @@ const productService = {
         'name',
         'cover',
         'price_regular',
-        [
-          sequelize.cast(sequelize.literal('(SELECT SUM(quantity) FROM `OrderItems` WHERE `OrderItems`.`product_id` = `Product`.`id`)'), 'SIGNED'),
-          'salesCount'
-        ]
       ],
       include: {
         model: Category,
@@ -176,11 +176,32 @@ const productService = {
       nest: true
     }
 
+    if (sort === 'salesAmount') {
+      queryOptions.attributes.push([
+        sequelize.cast(
+          sequelize.literal('(SELECT SUM(quantity * price_each) FROM `OrderItems` WHERE `OrderItems`.`product_id` = `Product`.`id`)'),
+          'DECIMAL(10, 2)'
+        ),
+        'salesAmount'
+      ])
+      queryOptions.order = [[sequelize.literal('salesAmount'), 'DESC']]
+    } else {
+      queryOptions.attributes.push([
+        sequelize.cast(
+          sequelize.literal('(SELECT SUM(quantity) FROM `OrderItems` WHERE `OrderItems`.`product_id` = `Product`.`id`)'),
+          'SIGNED'
+        ),
+        'salesCount'
+      ])
+      queryOptions.order = [[sequelize.literal('salesCount'), 'DESC']]
+    }
+
     const products = await Product.findAll(queryOptions)
+
     if (products.length) {
       return {
         status: 'success',
-        message: 'top products retrieved succeed',
+        message: 'top products retrieved successfully',
         products
       }
     } else {

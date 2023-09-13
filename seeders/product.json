@@ -30,7 +30,7 @@
     "price_regular": 500,
     "price_sale": 350,
     "description": "Indulge in the timeless elegance of our Strawberry Cake, where every forkful transports you to a world of creamy richness and fruity zest. Crafted meticulously, this cake fuses layers of buttery vanilla sponge with a heartwarming strawberry compote, embodying the spirit of summer in every bite.",
-    "images":[
+    "images": [
       {
         "image_path": "https://images.unsplash.com/photo-1622621746668-59fb299bc4d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=933&q=80",
         "is_display": 1
@@ -53,7 +53,7 @@
     "price_regular": 400,
     "price_sale": 350,
     "description": "Crafted meticulously with select premium cocoa beans, this cake is a chocolate lover's dream come true. Each layer of the moist, velvety sponge harmoniously blends with the luscious, creamy chocolate ganache, delivering an unparalleled taste sensation. A light sprinkle of cocoa dust graces the top, adding a touch of elegance and depth. But the pièce de résistance is the heart of the cake: a silky chocolate mousse center that provides a delightful contrast in texture and ensures every slice is a harmonious blend of decadence and airiness.",
-    "images":[
+    "images": [
       {
         "image_path": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
         "is_display": 1
@@ -76,7 +76,7 @@
     "price_regular": 600,
     "price_sale": 450,
     "description": "A heavenly blend of sweet and tart. Each slice boasts layers of fluffy sponge intertwined with bursts of fresh blueberries. Topped with a glossy blueberry glaze, this cake is the embodiment of simple elegance. Relish in the rich flavors of nature's finest berries with every bite!",
-    "images":[
+    "images": [
       {
         "image_path": "https://images.unsplash.com/photo-1589793052434-1f7c60053f28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
         "is_display": 1
@@ -99,7 +99,7 @@
     "price_regular": 250,
     "price_sale": 200,
     "description": "Delve into the creamy delight of our Cheesecake. A perfect symphony of velvety cheese and a buttery crumb base, each slice offers an indulgent escape. With its smooth texture and rich flavor, this cake stands as a testament to classic dessert mastery. Savor pure cheesecake bliss with every bite!",
-    "images":[
+    "images": [
       {
         "image_path": "https://images.unsplash.com/photo-1642588362129-03eeb0ba63e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
         "is_display": 1
@@ -122,7 +122,7 @@
     "price_regular": 500,
     "price_sale": 450,
     "description": "Embrace the tropical allure of our Mango Cake. Layered with vibrant mango purée and light sponge, this cake epitomizes summery sweetness. Each bite is a fusion of lush mango and delicate cake, transporting you to a sun-drenched orchard. Dive into a slice and celebrate nature's golden treat!",
-    "images":[
+    "images": [
       {
         "image_path": "https://images.unsplash.com/photo-1688458297155-228a3b1e5b49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
         "is_display": 1
@@ -163,7 +163,7 @@
   {
     "name": "Fig Cake",
     "category_id": 1,
-    "cover": "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=729&q=80",
+    "cover": "https://images.unsplash.com/photo-1565661834013-d196ca46e14e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
     "stock_quantity": 20,
     "price_regular": 400,
     "price_sale": 350,
@@ -416,7 +416,7 @@
   {
     "name": "Cherry Cupcakes",
     "category_id": 2,
-    "cover": "https://images.unsplash.com/photo-1623246123320-0d6636755796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+    "cover": "https://images.unsplash.com/photo-1596223575327-99a5be4faf1e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
     "stock_quantity": 20,
     "price_regular": 30,
     "price_sale": 29,
