@@ -6,7 +6,21 @@
     "stock_quantity": 60,
     "price_regular": 450,
     "price_sale": 300,
-    "description": "good cake"
+    "description": "Dive into the enchanting allure of our Raspberry Cake—a symphony of sweetness and tartness in perfect harmony. Crafted with layers of soft, airy sponge, each bite reveals a luscious raspberry compote center that teases the palate with its vibrant tang. The cake's surface boasts a delicate, glossy glaze that captures the essence of fresh raspberries.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1565605926614-8b9928ef9b03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1615735487485-e52b9af610c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Strawberry Cake",
@@ -15,339 +29,825 @@
     "stock_quantity": 80,
     "price_regular": 500,
     "price_sale": 350,
-    "description": "good cake"
+    "description": "Indulge in the timeless elegance of our Strawberry Cake, where every forkful transports you to a world of creamy richness and fruity zest. Crafted meticulously, this cake fuses layers of buttery vanilla sponge with a heartwarming strawberry compote, embodying the spirit of summer in every bite.",
+    "images":[
+      {
+        "image_path": "https://images.unsplash.com/photo-1622621746668-59fb299bc4d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=933&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1622622008494-60c9e6b41996?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=961&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1602663491496-73f07481dbea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Chocolate Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1089&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
+    "stock_quantity": 100,
+    "price_regular": 400,
     "price_sale": 350,
-    "description": "good cake"
+    "description": "Crafted meticulously with select premium cocoa beans, this cake is a chocolate lover's dream come true. Each layer of the moist, velvety sponge harmoniously blends with the luscious, creamy chocolate ganache, delivering an unparalleled taste sensation. A light sprinkle of cocoa dust graces the top, adding a touch of elegance and depth. But the pièce de résistance is the heart of the cake: a silky chocolate mousse center that provides a delightful contrast in texture and ensures every slice is a harmonious blend of decadence and airiness.",
+    "images":[
+      {
+        "image_path": "https://images.unsplash.com/photo-1605807646983-377bc5a76493?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1024&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1602351448444-c2daed5f142e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Blueberry Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1567327613485-fbc7bf196198?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 600,
+    "price_sale": 450,
+    "description": "A heavenly blend of sweet and tart. Each slice boasts layers of fluffy sponge intertwined with bursts of fresh blueberries. Topped with a glossy blueberry glaze, this cake is the embodiment of simple elegance. Relish in the rich flavors of nature's finest berries with every bite!",
+    "images":[
+      {
+        "image_path": "https://images.unsplash.com/photo-1589793052434-1f7c60053f28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1589793052411-96aad388a622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1589793052464-ce572b4af507?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Cheese Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1613680542429-3ff9a5e89900?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 250,
+    "price_sale": 200,
+    "description": "Delve into the creamy delight of our Cheesecake. A perfect symphony of velvety cheese and a buttery crumb base, each slice offers an indulgent escape. With its smooth texture and rich flavor, this cake stands as a testament to classic dessert mastery. Savor pure cheesecake bliss with every bite!",
+    "images":[
+      {
+        "image_path": "https://images.unsplash.com/photo-1642588362129-03eeb0ba63e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1564988209213-c0de88d3c8ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=759&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1663447170676-99f1ec83931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTk0fHxjaGVlc2UlMjBjYWtlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Mango Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1633834704595-63d830818bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
-    "stock_quantity": 80,
+    "stock_quantity": 20,
     "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "price_sale": 450,
+    "description": "Embrace the tropical allure of our Mango Cake. Layered with vibrant mango purée and light sponge, this cake epitomizes summery sweetness. Each bite is a fusion of lush mango and delicate cake, transporting you to a sun-drenched orchard. Dive into a slice and celebrate nature's golden treat!",
+    "images":[
+      {
+        "image_path": "https://images.unsplash.com/photo-1688458297155-228a3b1e5b49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1642614696258-6eadac9705f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1605027990121-cbae9e0642df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Blackberry Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=729&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 50,
+    "price_regular": 450,
+    "price_sale": 400,
+    "description": "Indulge in the tantalizing fusion of our Blackberry Cake. Layers of delicate sponge cradle a luscious blackberry filling, offering a perfect balance of sweetness and tartness. Each bite is adorned with ripe, glistening blackberries, making it a visual and gustatory masterpiece. A treat for the senses!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1596567836640-3c13eb102106?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1193&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1560180474-e8563fd75bab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1567870335471-1129836babcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Fig Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=729&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
+    "stock_quantity": 20,
+    "price_regular": 400,
     "price_sale": 350,
-    "description": "good cake"
+    "description": "Delve into the timeless allure of our exquisite Fig Cake, a harmonious blend of ancient tradition and culinary innovation. This treat is rooted in the rich history of Mediterranean and Middle Eastern cuisines, where figs are celebrated as symbols of peace and prosperity.Our Fig Cake captures the essence of sun-drenched figs, harvested at their peak of ripeness, ensuring a sweetness that's both intense and natural.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1521624738948-5250b8a7c220?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1692106914804-87c6aa35c48f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1615454782501-10141e907c75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Caramel Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1619867994225-724b17475220?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
     "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "price_regular": 250,
+    "price_sale": 200,
+    "description": "Dive into the rich allure of our Caramel Cake. Each layer is infused with smooth, velvety caramel, creating a symphony of sweetness that melts in your mouth. Topped with a glossy caramel glaze and a sprinkle of sea salt, this cake offers a delightful balance, making every bite irresistibly decadent.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1597061286894-5100bd5be656?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1549876919-88b8fa42ac7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1619868208769-66d64945f214?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Lemon Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1534353875273-b5887cc1abf5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 45,
+    "price_regular": 350,
+    "price_sale": 320,
+    "description": "Savor the zesty charm of our Lemon Cake. Bursting with bright, citrusy notes, each slice promises a refreshing dance of flavors. Crafted with sun-kissed lemons and a tender crumb, this cake is topped with a delicate lemon glaze, delivering the perfect balance of sweetness and tang. A true delight for the senses!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1515754164677-ec9796621bcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1508432310926-5712bcb79944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=674&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1515686954815-8667163e4edb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Macarons Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1535110607694-ef23b879894a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 20,
+    "price_regular": 650,
+    "price_sale": 620,
+    "description": "Dive into the enchanting world of our Macarons Cake. A symphony of lightness and flavor, this cake combines the delicate texture of classic sponge with the colorful allure of macarons adorning its surface. Every bite blends rich creaminess and the crispness of macarons, offering a uniquely delightful experience.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1537026952880-102669376468?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1581344797783-b6f505d6300e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1581344535097-4160879a1b28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Apple Pie",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1562007908-17c67e878c88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 100,
+    "price_regular": 400,
+    "price_sale": 320,
+    "description": "Savor the timeless delight of our Apple Pie. Brimming with tender, spiced apple chunks nestled in a buttery, flaky crust, it captures the essence of home and tradition. Each slice offers a perfect balance of sweetness and tang, transporting you to a realm of nostalgic comfort with every bite.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1649931189158-489360fd46f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1562007908-eafae5256554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1608830597395-6738a70ff2bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Matcha Cake",
     "category_id": 1,
     "cover": "https://images.unsplash.com/photo-1658519921417-3862045da5cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 50,
+    "price_regular": 400,
+    "price_sale": 370,
+    "description": "Experience the Zen of flavors with our Matcha Cake. Every layer is a dance of fine Japanese matcha and creamy richness. Its vibrant green hue promises a cake that's both refreshingly earthy and delightfully sweet. Dive into this fusion of tradition and taste, perfect for discerning palates.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1627308592814-f88b68f7b4a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1491226907933-45f03868ca1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1315&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1567945520067-d37a381fd5e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Chocolate Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "stock_quantity": 60,
-    "price_regular": 450,
-    "price_sale": 300,
-    "description": "Indulge in our Chocolate Cupcake, a delectable treat that captivates the senses. Crafted with rich, velvety cocoa, each bite reveals a moist crumb and a melt-in-the-mouth experience. Topped with a luscious swirl of creamy chocolate frosting, it's the perfect blend of sweetness and cocoa intensity. A bite-sized luxury you won't resist!"
+    "stock_quantity": 50,
+    "price_regular": 40,
+    "price_sale": 35,
+    "description": "Indulge in our Chocolate Cupcake, a delectable treat that captivates the senses. Crafted with rich, velvety cocoa, each bite reveals a moist crumb and a melt-in-the-mouth experience. Topped with a luscious swirl of creamy chocolate frosting, it's the perfect blend of sweetness and cocoa intensity. A bite-sized luxury you won't resist!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1616631124190-fa90afc46fa7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1582760998343-042b34030a29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1640806353257-6c408529d822?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Lemon Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1608847567708-1e0b5a46eb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 10,
+    "price_regular": 45,
+    "price_sale": 30,
+    "description": "Savor the zesty delight of our Lemon Cupcake. Infused with fresh lemon zest and juice, its fluffy core bursts with tangy sweetness, topped with a luscious lemon glaze. Perfect for a light treat or to invigorate your taste buds. It's sunshine in a bite!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1514077583608-aedd9ec18c40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1601905417805-51beeb09c567?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1591291294701-4f651ddd3556?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Blueberry Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1586941589370-9b4fd6688a6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 30,
+    "price_regular": 55,
+    "price_sale": 45,
+    "description": "Indulge in the essence of summer with our Blueberry Cupcake. Packed with juicy blueberries and crowned with a velvety cream frosting, it's a delightful fusion of sweet and tart. Every bite promises a burst of berry goodness, making it a must-try for fruit and cake lovers alike!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1664589225692-6b433d62229b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1658980356161-ce7ddcda6f95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80https://images.unsplash.com/photo-1684246524496-180d5b07ee7e?ixlib=rb-",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1684246524496-180d5b07ee7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Strawberry Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1563778084459-859099e48677?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 20,
+    "price_regular": 60,
+    "price_sale": 55,
+    "description": "Dive into a world of fruity delight with our Strawberry Cupcake. Infused with luscious strawberries and topped with a creamy swirl of frosting, this cupcake is a symphony of sweet and tangy notes. The vibrant berry bursts in every bite, offering a taste of summer all year round. Pure strawberry bliss!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1627906593885-aff95d910633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=767&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1663145101001-ea8bb9b86eb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1555684655-49a1c6b94dd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Caramel Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1623246123320-0d6636755796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 50,
+    "price_regular": 45,
+    "price_sale": 40,
+    "description": "Indulge in the rich allure of our Caramel Cupcake. Each bite melds the deep sweetness of caramel with a soft, fluffy base, creating a melt-in-the-mouth experience. Topped with a glossy caramel drizzle and a pinch of sea salt, this cupcake is the perfect blend of sweet and salty sophistication. A caramel lover's dream!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1601045518565-2f15fff0b42b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1601045263606-b31b202de911?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1643286467961-e8c5e0abfdf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Cherry Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1623246123320-0d6636755796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 20,
+    "price_regular": 30,
+    "price_sale": 29,
+    "description": "Dive into the delightful burst of our Cherry Cupcake. A fluffy, light base paired with a vibrant cherry-infused frosting makes every bite a fruity revelation. Garnished with a succulent cherry on top, this cupcake is an elegant blend of sweetness and tang, offering a taste of summer all year round. Truly cherry-licious!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1599785209758-243af93bd074?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1617530277710-896c818152c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1175&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1607097049494-45f6c80c98fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Hazelnuts Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1603532648955-039310d9ed75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 60,
+    "price_regular": 50,
+    "price_sale": 45,
+    "description": "Experience the nutty indulgence of our Hazelnut Cupcake. With a soft crumb texture infused with rich hazelnut tones and topped with a glossy hazelnut glaze, each bite offers a blend of crunch and creaminess. Adorned with a whole hazelnut, this cupcake is a sweet tribute to timeless, classic flavors. A nut lover's dream!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1533876080314-4ab7c6445ae9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=736&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1587306433689-9c8c4efabf5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Party Cupcakes",
     "category_id": 2,
     "cover": "https://images.unsplash.com/photo-1474625342403-1b8a2c0f7215?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 45,
+    "price_sale": 40,
+    "description": "Celebrate every occasion with our Party Cupcake! Vibrantly adorned with colorful sprinkles and a luscious swirl of creamy frosting, this cupcake is the life of any dessert table. Each bite promises a burst of joy, making it perfect for birthdays, anniversaries, or any festivity. Turn moments into memories!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1502597276204-a3833c063739?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1659549590557-5ee5d6b2f470?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1687542172889-55fb2d01f55d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Chocolate Biscuits",
     "category_id": 3,
     "cover": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 30,
+    "price_regular": 25,
+    "price_sale": 20,
+    "description": "Indulge in the rich allure of our Chocolate Biscuits. Crafted with premium cocoa, each biscuit offers a delectable crunch on the outside and a melt-in-your-mouth chocolatey core. Perfect for pairing with a warm beverage or savoring solo, these biscuits elevate everyday moments to pure bliss. Dive in!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1618774491810-d44e4ebf7501?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1590080874088-eec64895b423?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=894&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1612117568851-c6f49f8f0e87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1122&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Oatmeal Cookie",
     "category_id": 3,
     "cover": "https://images.unsplash.com/photo-1600147573971-a2135dbff47e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 30,
+    "price_regular": 30,
+    "price_sale": 28,
+    "description": "Discover the hearty goodness of our Oatmeal Biscuits. Made with whole grain oats and a hint of golden honey, these biscuits are a delightful blend of crunch and chewiness. Whether you're kickstarting your day or enjoying a tea break, our oatmeal biscuits are your wholesome companion. Savor the simplicity!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1590194360930-4866613967b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1134&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1475856033578-76b4a228f5c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1576186726672-fd51b981b116?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Almond Cookie",
     "category_id": 3,
     "cover": "https://images.unsplash.com/photo-1436565121087-bb8d210c9752?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 30,
+    "price_regular": 20,
+    "price_sale": 19,
+    "description": "Indulge in the nutty allure of our Almond Biscuits. Crafted with roasted almonds and a whisper of vanilla, each bite offers a delightful crunch and subtle sweetness. Perfectly toasted to golden perfection, they're the quintessential treat for almond lovers. Elevate your snack moments with this almond delight!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1436565079298-1b29be0341b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1612388307727-afe00578ca21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1523996622746-ae4e4fbb3fc2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Matcha Cookie",
     "category_id": 3,
     "cover": "https://images.unsplash.com/photo-1582793908541-782dc529fd7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 40,
+    "price_sale": 35,
+    "description": "Savor the exquisite fusion of traditional and modern with our Matcha Biscuits. Infused with authentic green tea powder, these biscuits present a delicate balance of earthy matcha and buttery goodness. Their vibrant hue and unique flavor make them a delightful treat for both eyes and palate. Dive into a matcha-infused escapade!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1633798538585-1ecc4fb5dbb2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=695&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1566373049939-704ea187ef98?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1605729988263-7752475299e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Peanut Cookie",
     "category_id": 3,
     "cover": "https://images.unsplash.com/photo-1607919965349-c3c790913de7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 35,
+    "price_sale": 30,
+    "description": "Indulge in the nostalgic crunch of our Peanut Biscuits. Crafted with roasted peanuts and a hint of sweetness, these biscuits deliver a satisfying bite every time. Perfectly baked to golden perfection, they capture the wholesome essence of peanuts, offering a delightful snack that warms the heart. Dive into peanut bliss!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1520903366097-883405842889?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1634745937658-0e384e27d2c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1587726407118-7f4e2c85f84b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Original Croissants",
     "category_id": 4,
     "cover": "https://images.unsplash.com/photo-1530610476181-d83430b64dcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
-    "stock_quantity": 60,
-    "price_regular": 450,
-    "price_sale": 300,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 50,
+    "price_sale": 45,
+    "description": "Experience the timeless allure of our Original Croissants. Expertly crafted with layers of buttery goodness, they rise to a golden, flaky perfection. Each bite transports you to a Parisian morning, with the delicate balance of crisp outside and soft inside. A true classic reimagined for modern tastes.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1623334044303-241021148842?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://plus.unsplash.com/premium_photo-1674562179816-04fda3958c12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1612366747681-e4ca6992b1e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=804&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Almond Croissants",
     "category_id": 4,
     "cover": "https://images.unsplash.com/photo-1586657263857-346c4b712ff5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 35,
+    "price_regular": 50,
+    "price_sale": 45,
+    "description": "Dive into the rich tapestry of our Almond Croissants. Layered with buttery flakiness, they're generously filled and topped with a sprinkle of crushed almonds. A sweet almond paste core elevates every bite, offering a delightful contrast. Revel in this exquisite fusion of traditional craft and nutty luxury.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1565182363525-f95648bbeee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1649542181703-33cc4f373b28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1625425404751-19b16c027511?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Sea Salt Croissants",
     "category_id": 4,
     "cover": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1026&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
-  },
-  {
-    "name": "Strawberry Cake",
-    "category_id": 4,
-    "cover": "https://images.unsplash.com/photo-1596529267076-07866e3655cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 30,
+    "price_regular": 50,
+    "price_sale": 45,
+    "description": "Discover the perfect balance of savory and flaky with our Sea Salt Croissants. Each layer reveals a delicate fusion of buttery richness, complemented by the subtle crunch of sea salt crystals. This culinary masterpiece redefines traditional tastes, offering a unique and tantalizing twist to your mornings.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1602401986680-90bf1dd7232a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1596554928189-05ea9bfffe3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Sesame Croissants",
     "category_id": 4,
     "cover": "https://images.unsplash.com/photo-1574766777271-cf399aebb82e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 20,
+    "price_regular": 45,
+    "price_sale": 40,
+    "description": "Delight in our Sesame Croissants—a classic with a twist. Each layer is imbued with rich, nutty sesame, offering a unique taste juxtaposed with traditional buttery flakiness. It's a perfect symphony of crunch and softness that promises a memorable bite every time. Elevate your mornings or teatime moments.",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1534448227926-b7d7fdf991b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1652177216420-89d06cbf7190?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1615113557959-3828f77886a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTZ8fGNyb2lzc2FudCUyMHNlc2FtZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Chocolate Croissants",
     "category_id": 4,
     "cover": "https://images.unsplash.com/photo-1572451480598-fb65b95a6ea0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 55,
+    "price_sale": 50,
+    "description": "Introducing our Chocolate Croissants - where rich, velvety chocolate meets buttery layers of flaky perfection. Every bite offers a sumptuous chocolate burst, seamlessly melded within a delicate pastry embrace. Ideal for breakfast or as a sweet treat, it's a delightful fusion of classic and indulgence. Dive in!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1479894127662-a987d1e38f82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1604639892949-6c7e0b858774?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=697&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1649019937955-9687640aaaab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Cheese Croissants",
     "category_id": 4,
     "cover": "https://images.unsplash.com/photo-1643627876160-fd3f62800e71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 25,
+    "price_regular": 45,
+    "price_sale": 40,
+    "description": "Unveiling our Cheese Croissants – a divine fusion of creamy, melt-in-your-mouth cheese enveloped within layers of golden, buttery pastry. Perfectly crispy on the outside and luxuriously soft inside, it's a savory delight that elevates every moment. Whether it's breakfast or a snack, indulge in cheesy bliss!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1658740877404-4ec982e2ac8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1658740877563-d4e3d31c2b4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1683314573424-b0da0c795a07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Chocolate donuts",
     "category_id": 5,
     "cover": "https://images.unsplash.com/photo-1551024601-bec78aea704b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 50,
+    "price_regular": 55,
+    "price_sale": 50,
+    "description": "Dive into the decadent world of our Chocolate Donuts, where each bite is a chocolaty dream! Drenched in a glossy chocolate glaze and fluffy on the inside, these donuts promise an unforgettable taste experience. Ideal for a treat-yourself moment or sharing with friends. Sweet perfection in every bite!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1665811791551-f93af5d0fe7c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=790&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1639710743616-c5dfaf1fbb2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Strawberry Donuts",
     "category_id": 5,
     "cover": "https://images.unsplash.com/photo-1533910534207-90f31029a78e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 30,
+    "price_regular": 60,
+    "price_sale": 58,
+    "description": "Savor the sweet allure of our Strawberry Donuts! Adorned with a luscious strawberry glaze and speckled with real fruit bits, each donut offers a burst of summery delight. Soft, fresh, and filled with berry goodness, they're a must-try for every sweet tooth. Taste the berry best of indulgence!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1464347477106-7648bc26261b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=780&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1586709519395-c711ef660c0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Frosted Donuts",
     "category_id": 5,
     "cover": "https://images.unsplash.com/photo-1497052254059-f3e0bf1a5133?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=747&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
-  },
-  {
-    "name": "Strawberry Cake",
-    "category_id": 1,
-    "cover": "https://images.unsplash.com/photo-1596529267076-07866e3655cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 50,
+    "price_sale": 45,
+    "description": "Dive into the delightful world of our Frosted Donuts! Each bite offers a symphony of a perfectly soft donut core beneath a smooth, melt-in-your-mouth frosting. Whether enjoyed with morning coffee or as an afternoon treat, they're the sprinkle of joy every moment deserves. Pure frosted perfection awaits!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1516919549054-e08258825f80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1626379801357-537572de4ad6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=735&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Original Donuts",
     "category_id": 5,
     "cover": "https://images.unsplash.com/photo-1631143071707-6de7429d4d0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 30,
+    "price_regular": 40,
+    "price_sale": 35,
+    "description": "Experience the timeless pleasure of our Original Donuts. Crafted with love and simplicity, these donuts boast a classic flavor and a soft, airy texture that whisks you back to cherished memories. Perfectly golden, they're the quintessential companion to your coffee breaks. Delight in every bite!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1573050329989-9c2509328687?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1577550312791-1cacc3cffc8a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1601703857841-d04ddd0a6b07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+        "is_display": 1
+      }
+    ]
   },
   {
     "name": "Caramel Donuts",
     "category_id": 5,
     "cover": "https://images.unsplash.com/photo-1649035571623-57376e44d526?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
-    "stock_quantity": 80,
-    "price_regular": 500,
-    "price_sale": 350,
-    "description": "good cake"
+    "stock_quantity": 40,
+    "price_regular": 50,
+    "price_sale": 45,
+    "description": "Indulge in the luscious allure of our Caramel Donuts. Each bite unveils a velvety blend of rich caramel sweetness, harmoniously complementing the donut's soft core. With a glossy, golden finish, it's not just a treat for the taste buds but a feast for the eyes. Elevate your snack moments effortlessly!",
+    "images": [
+      {
+        "image_path": "https://images.unsplash.com/photo-1643298892616-3737fa0c5451?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1570578201128-b04806c957f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+        "is_display": 1
+      },
+      {
+        "image_path": "https://images.unsplash.com/photo-1619286310765-4cd8819ef03c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+        "is_display": 1
+      }
+    ]
   }
 ]
