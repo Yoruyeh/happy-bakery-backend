@@ -14,7 +14,7 @@ const productService = {
       date_asc: ['createdAt', 'ASC']
     }
     // get product count
-    const productCount = await productService.getProductCount(category)
+    const productCount = await productService.getProductCount(category, keyword)
 
     const queryOptions = {
       where: {},
@@ -26,6 +26,7 @@ const productService = {
         'name',
         'category_id',
         'cover',
+        'stock_quantity',
         'price_regular',
         'price_sale',
         [sequelize.literal('DATE(Product.created_at)'), 'create_date'],
@@ -74,8 +75,14 @@ const productService = {
     }
   },
 
-  getProductCount: async (categoryId) => {
+  getProductCount: async (categoryId, keyword) => {
     const whereOptions = categoryId ? { category_id: categoryId } : {}
+    if (keyword) {
+        whereOptions.name = {
+            [Op.like]: `%${keyword}%`
+        }
+    }
+    
     let totalCount
     totalCount = await Product.count({ where: whereOptions })
 

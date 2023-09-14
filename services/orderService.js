@@ -54,10 +54,10 @@ const orderService = {
     const { paymentMethod } = payment
 
     // check stock and create order items
-    const orderItemsWithStockCheck = await orderService.checkStockAndCreateOrderItems(orderItems)
+    const orderItemsWithStockCheck = await orderService.checkStock(orderItems)
 
     // create order
-    const newOrder = await orderService.createOrder(userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod)
+    const { newOrder, newOrderItem } = await orderService.createOrder(userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod, orderItemsWithStockCheck)
 
     // deduct stock
     await orderService.deductStockQuantity(orderItemsWithStockCheck)
@@ -70,7 +70,7 @@ const orderService = {
         status: 'success',
         message: 'Create order succeed',
         newOrder,
-        newOrderItem: orderItemsWithStockCheck
+        newOrderItem
       }
     } else {
       return {
@@ -80,7 +80,7 @@ const orderService = {
     }
   },
 
-  checkStockAndCreateOrderItems: async (orderItems) => {
+  checkStock: async (orderItems) => {
     const orderItemsWithStockCheck = []
     for (const item of orderItems) {
       const product = await Product.findByPk(item.id)
@@ -100,8 +100,8 @@ const orderService = {
     return orderItemsWithStockCheck
   },
 
-  createOrder: async (userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod) => {
-    return await Order.create({
+  createOrder: async (userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod, orderItemsWithStockCheck) => {
+    const newOrder = await Order.create({
       userId,
       status: 'pending',
       firstName,
@@ -114,6 +114,13 @@ const orderService = {
       paymentMethod,
       shippingMethod
     })
+    // create order items
+    const orderId = newOrder.dataValues.id
+    orderItemsWithStockCheck.forEach(item => {
+      item.orderId = orderId
+    })
+    const newOrderItem = await OrderItem.bulkCreate(orderItemsWithStockCheck)
+    return { newOrder, newOrderItem }
   },
 
   deductStockQuantity: async (orderItems) => {
