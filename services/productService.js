@@ -50,11 +50,6 @@ const productService = {
           name: {
             [Op.like]: `%${keyword}%`
           }
-        },
-        {
-          description: {
-            [Op.like]: `%${keyword}%`
-          }
         }
       ]
     }
@@ -78,11 +73,11 @@ const productService = {
   getProductCount: async (categoryId, keyword) => {
     const whereOptions = categoryId ? { category_id: categoryId } : {}
     if (keyword) {
-        whereOptions.name = {
-            [Op.like]: `%${keyword}%`
-        }
+      whereOptions.name = {
+        [Op.like]: `%${keyword}%`
+      }
     }
-    
+
     let totalCount
     totalCount = await Product.count({ where: whereOptions })
 

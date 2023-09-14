@@ -288,7 +288,7 @@ const adminService = {
       date_asc: ['createdAt', 'ASC']
     }
     // get product count
-    const productCount = await productService.getProductCount(category)
+    const productCount = await productService.getProductCount(category, keyword)
 
     const queryOptions = {
       where: {},
@@ -327,11 +327,6 @@ const adminService = {
       queryOptions.where[Op.or] = [
         {
           name: {
-            [Op.like]: `%${keyword}%`
-          }
-        },
-        {
-          description: {
             [Op.like]: `%${keyword}%`
           }
         }
