@@ -26,9 +26,27 @@ const getToday = () => {
   return today.toISOString().substring(0, 10)
 }
 
+// get random int
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+// get random date between 2022-2023
+const getRandomDate = () => {
+  const year = getRandomInt(2022, 2023)
+  const month = getRandomInt(1, 12)
+  const daysInMonth = new Date(year, month, 0).getDate()
+  const day = getRandomInt(1, daysInMonth)
+
+  return new Date(year, month - 1, day)
+}
+
 module.exports = {
   dateFormate,
   dateFormateMonth,
   getOneWeekAgo,
-  getToday
+  getToday,
+  getRandomDate
 }
