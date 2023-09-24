@@ -7,13 +7,15 @@
 A E-commerce brand website.
 API Functions as below:
 
-### Admin
+### User
 - Users can register as members.
 - Users can browse all products, the latest products, and popular products.
 - Users can search for products by keywords.
 - Users can select the quantity and add the item to the shopping cart or proceed with an immediate purchase, which directs them to the checkout page.
 - Users can view past order details.
 - Users can update their membership information and password in the "Member Info" section of the member center.
+
+### Admin
 - Admins can view all products or filter products by category.
 - Admins can add new products and upload up to four product photos.
 - Admin dashboard is currently under optimization and is not yet complete.
