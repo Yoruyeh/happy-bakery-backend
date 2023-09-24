@@ -1,5 +1,8 @@
 # Brand Website
 
+![screenshot](public/images/user.gif)
+![screenshot](public/images/admin.gif)
+
 ## About
 
 ---
