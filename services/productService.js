@@ -157,11 +157,6 @@ const productService = {
 
   getPopularProducts: async (top, startDate, endDate, sort) => {
     let queryOptions = {
-      where: {
-        created_at: {
-          [Op.between]: [startDate, endDate]
-        }
-      },
       limit: top,
       attributes: [
         'id',
@@ -176,6 +171,14 @@ const productService = {
       },
       raw: true,
       nest: true
+    }
+
+    if (startDate !== undefined && endDate !== undefined) { 
+      queryOptions.where = { 
+        created_at: { 
+          [Op.between]: [startDate, endDate] 
+        }
+      }
     }
 
     if (sort === 'salesAmount') {

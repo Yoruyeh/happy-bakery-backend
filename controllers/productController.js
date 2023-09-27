@@ -1,7 +1,7 @@
 const productService = require('../services/productService')
 const { CError } = require('../middleware/error-handler')
 const { isValidateId, isValidDate } = require('../helpers/validation-helper')
-const { getOneWeekAgo, getToday } = require('../helpers/date-helper')
+const { getOneYearAgo, getToday } = require('../helpers/date-helper')
 
 const productController = {
 
@@ -54,7 +54,7 @@ const productController = {
 
       // set default date
       if (!isValidDate(startDate)) {
-        startDate = getOneWeekAgo(startDate)
+        startDate = getOneYearAgo(startDate)
       }
       if (!isValidDate(endDate)) {
         endDate = getToday(endDate)

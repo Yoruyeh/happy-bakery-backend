@@ -15,9 +15,9 @@ const dateFormateMonth = (dateString) => {
   return formattedDate
 }
 
-const getOneWeekAgo = () => {
-  const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
-  return oneWeekAgo.toISOString().substring(0, 10)
+const getOneYearAgo = () => {
+  const oneYearAgo = new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
+  return oneYearAgo.toISOString().substring(0, 10)
 }
 
 const getToday = () => {
@@ -46,7 +46,7 @@ const getRandomDate = () => {
 module.exports = {
   dateFormate,
   dateFormateMonth,
-  getOneWeekAgo,
+  getOneYearAgo,
   getToday,
   getRandomDate
 }

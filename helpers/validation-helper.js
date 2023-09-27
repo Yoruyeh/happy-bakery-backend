@@ -30,6 +30,9 @@ const isValidItem = (item) => {
 
 // check date
 const isValidDate = (dateString) => {
+  if (!dateString) {
+    return true
+  }
   return /^\d{4}-\d{2}-\d{2}$/.test(dateString)
 }
 
