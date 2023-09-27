@@ -20,6 +20,12 @@ const getOneYearAgo = () => {
   return oneYearAgo.toISOString().substring(0, 10)
 }
 
+const convertToOneYearAgo = (dateStr) => {
+  const inputDate = new Date(dateStr)
+  inputDate.setFullYear(inputDate.getFullYear() - 1)
+  return inputDate.toISOString().split('T')[0]
+}
+
 const getToday = () => {
   const today = new Date()
   today.setDate(today.getDate() + 1)
@@ -47,6 +53,7 @@ module.exports = {
   dateFormate,
   dateFormateMonth,
   getOneYearAgo,
+  convertToOneYearAgo,
   getToday,
   getRandomDate
 }

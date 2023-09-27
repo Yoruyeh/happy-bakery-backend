@@ -27,6 +27,9 @@ router.get('/order/:id', authenticatedAdmin, adminController.getOrder)
 router.put('/order/:id', authenticatedAdmin, adminController.putOrder)
 router.get('/orders', authenticatedAdmin, adminController.getOrders)
 
+// sales
+router.get('/sales', authenticatedAdmin, adminController.getSales)
+
 // admin info
 router.put('/password', authenticatedAdmin, adminController.putPassword)
 router.get('/', authenticatedAdmin, adminController.getAdminSetting)

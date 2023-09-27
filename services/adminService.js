@@ -1,11 +1,12 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
+const percentChange = require('percent-change')
 const { Op } = require('sequelize')
 const { sequelize, User, Product, Category, ProductImage, Order, OrderItem } = require('../models')
 const productService = require('./productService')
 const { CError } = require('../middleware/error-handler')
 const { calShippingFee } = require('../helpers/fee-helper')
-const { dateFormateMonth } = require('../helpers/date-helper')
+const { dateFormateMonth, convertToOneYearAgo } = require('../helpers/date-helper')
 
 const adminService = {
 
@@ -471,6 +472,101 @@ const adminService = {
     totalCount = await Order.count()
 
     return totalCount
+  },
+
+  getSales: async (startDate, endDate) => {
+    const totals = await adminService.getSalesAmount(startDate, endDate)
+    const YOY = await adminService.getYoYSales(startDate, endDate, totals)
+    const data = Object.keys(totals).map((key) => ({
+      [key]: {
+        sales: totals[key],
+        YOY: YOY[key],
+      }
+    }))
+
+    if (data) {
+      return {
+        status: 'success',
+        message: 'sales data retrieved successfully',
+        data
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no data found'
+      }
+    }
+  },
+
+  getSalesAmount: async (startDate, endDate) => {
+
+    const queryOptions = {
+      where: {
+        [Op.or]: [
+          { status: 'cancel' },
+          { status: 'pending' },
+          { status: 'delivered' }
+        ]
+      },
+      attributes: [
+        'status',
+        [sequelize.fn('SUM', sequelize.col('total_price')), 'total_price'],
+      ],
+      group: ['status'],
+      raw: true
+    }
+
+    if (startDate !== undefined && endDate !== undefined) {
+      queryOptions.where.created_at = {
+        [Op.between]: [startDate, endDate]
+      }
+    }
+
+    const order = await Order.findAll(queryOptions)
+
+    const totals = {
+      total: 0,
+      active: 0,
+      shipped: 0
+    }
+    order.forEach(row => {
+      const status = row.status
+      const total_price = parseFloat(row.total_price)
+
+      totals.total += total_price
+
+      if (status === 'pending' || status === 'delivered') {
+        totals.active += total_price
+      }
+
+      if (status === 'delivered') {
+        totals.shipped += total_price
+      }
+    })
+
+    if (totals) return totals
+  },
+
+  getYoYSales: async (startDate, endDate, salesThisYear) => {
+    startDate = convertToOneYearAgo(startDate)
+    endDate = convertToOneYearAgo(endDate)
+
+    const salesLastYear = await adminService.getSalesAmount(startDate, endDate)
+
+    // YOY percent
+    const YOY = {}
+
+    for (const key in salesLastYear) {
+      if (salesLastYear.hasOwnProperty(key)) {
+        const lastYear = salesLastYear[key]
+        const thisYear = salesThisYear[key]
+
+        const percentageChange = (percentChange(lastYear, thisYear) * 100).toFixed(2) + "%"
+        YOY[key] = percentageChange
+      }
+    }
+
+    if (YOY) return YOY
   }
 }
 

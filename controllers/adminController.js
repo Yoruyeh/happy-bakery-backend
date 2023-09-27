@@ -198,6 +198,24 @@ const adminController = {
     } catch (error) {
       next(error)
     }
+  },
+
+  getSales: async (req, res, next) => {
+    try {
+      const { startDate, endDate } = req.query
+      // set default date
+      if (!isValidDate(startDate)) {
+        startDate = getOneWeekAgo(startDate)
+      }
+      if (!isValidDate(endDate)) {
+        endDate = getToday(endDate)
+      }
+
+      const { status, message, data } = await adminService.getSales(startDate, endDate)
+      res.json({ status, message, data })
+    } catch (error) {
+      next(error)
+    }
   }
 }
 module.exports = adminController
