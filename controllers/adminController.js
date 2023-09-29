@@ -218,7 +218,7 @@ const adminController = {
     }
   },
 
-  getInvervalSales: async (req, res, next) => {
+  getIntervalSales: async (req, res, next) => {
     try {
       let { year } = req.query
       if (!isPastYear(year)) {
@@ -226,7 +226,7 @@ const adminController = {
         year = currentDate.getFullYear()
       }
 
-      const { status, message, data } = await adminService.getInvervalSales(year)
+      const { status, message, data } = await adminService.getIntervalSales(year)
       res.json({ status, message, data })
     } catch (error) {
       next(error)

@@ -28,7 +28,7 @@ router.put('/order/:id', authenticatedAdmin, adminController.putOrder)
 router.get('/orders', authenticatedAdmin, adminController.getOrders)
 
 // sales
-router.get('/sales/interval', authenticatedAdmin, adminController.getInvervalSales)
+router.get('/sales/interval', authenticatedAdmin, adminController.getIntervalSales)
 router.get('/sales/status', authenticatedAdmin, adminController.getStatusSales)
 
 // admin info

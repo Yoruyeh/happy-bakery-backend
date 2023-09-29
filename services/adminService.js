@@ -571,7 +571,7 @@ const adminService = {
     if (YOY) return YOY
   },
 
-  getInvervalSales: async (year) => {
+  getIntervalSales: async (year) => {
     const yearlySales = await adminService.getYearlySales()
     const monthlySales = await adminService.getMonthlySales(year)
     const weeklySales = await adminService.getWeeklySales(year)
