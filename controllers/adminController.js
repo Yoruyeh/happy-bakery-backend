@@ -1,7 +1,7 @@
 const adminService = require('../services/adminService')
 const { CError } = require('../middleware/error-handler')
 const { isValidateId, isValidDate, validProduct, validateImages } = require('../helpers/validation-helper')
-const { getToday } = require('../helpers/date-helper')
+const { getToday, isPastYear } = require('../helpers/date-helper')
 const { imgurFileHandler } = require('../helpers/file-helper')
 
 const adminController = {
@@ -200,7 +200,7 @@ const adminController = {
     }
   },
 
-  getSales: async (req, res, next) => {
+  getStatusSales: async (req, res, next) => {
     try {
       const { startDate, endDate } = req.query
       // set default date
@@ -211,7 +211,22 @@ const adminController = {
         endDate = getToday(endDate)
       }
 
-      const { status, message, data } = await adminService.getSales(startDate, endDate)
+      const { status, message, data } = await adminService.getStatusSales(startDate, endDate)
+      res.json({ status, message, data })
+    } catch (error) {
+      next(error)
+    }
+  },
+
+  getInvervalSales: async (req, res, next) => {
+    try {
+      let { year } = req.query
+      if (!isPastYear(year)) {
+        const currentDate = new Date()
+        year = currentDate.getFullYear()
+      }
+
+      const { status, message, data } = await adminService.getInvervalSales(year)
       res.json({ status, message, data })
     } catch (error) {
       next(error)

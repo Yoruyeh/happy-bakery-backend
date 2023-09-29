@@ -40,6 +40,12 @@ const getPreviousYear = (dateStr) => {
   return previousYear.toString()
 }
 
+const isPastYear = (year) => {
+  const currentYear = new Date().getFullYear()
+  const yearPattern = /^\d{4}$/
+  return yearPattern.test(year) && parseInt(year, 10) <= currentYear
+}
+
 // get random int
 const getRandomInt = (min, max) => {
   min = Math.ceil(min)
@@ -63,6 +69,7 @@ module.exports = {
   getToday,
   getOneYearAgo,
   convertToOneYearAgo,
+  isPastYear,
   getPreviousYear,
   getRandomDate
 }

@@ -474,7 +474,7 @@ const adminService = {
     return totalCount
   },
 
-  getSales: async (startDate, endDate) => {
+  getStatusSales: async (startDate, endDate) => {
     const totals = await adminService.getSalesAmount(startDate, endDate)
     const YOY = await adminService.getYoYSales(startDate, endDate, totals)
     const compareTo = getPreviousYear(startDate)
@@ -569,6 +569,84 @@ const adminService = {
     }
 
     if (YOY) return YOY
+  },
+
+  getInvervalSales: async (year) => {
+    const yearlySales = await adminService.getYearlySales()
+    const monthlySales = await adminService.getMonthlySales(year)
+    const weeklySales = await adminService.getWeeklySales(year)
+
+    if (yearlySales && monthlySales && weeklySales) {
+      return {
+        status: 'success',
+        message: 'sales data retrieved successfully',
+        data: { yearlySales, monthlySales, weeklySales }
+      }
+    } else {
+      return {
+        status: 'success',
+        message: 'no data found'
+      }
+    }
+  },
+
+  getYearlySales: async () => {
+    const yearlySales = await Order.findAll({
+      attributes: [
+        [sequelize.fn('YEAR', sequelize.col('created_at')), 'year'],
+        [sequelize.fn('SUM', sequelize.col('total_price')), 'total_sales']
+      ],
+      group: [sequelize.fn('YEAR', sequelize.col('created_at'))],
+      raw: true
+    })
+
+    yearlySales.sort((a, b) => {
+      return a.year - b.year
+    })
+
+    if (yearlySales) return yearlySales
+  },
+
+  getMonthlySales: async (year) => {
+    const monthlySales = await Order.findAll({
+      attributes: [
+        [sequelize.fn('MONTH', sequelize.col('created_at')), 'month'],
+        [sequelize.fn('SUM', sequelize.col('total_price')), 'total_sales'],
+      ],
+      where: {
+        created_at: {
+          [Op.between]: [`${year}-01-01`, `${year}-12-31`],
+        },
+      },
+      group: [sequelize.fn('MONTH', sequelize.col('created_at'))],
+      raw: true,
+    })
+    monthlySales.sort((a, b) => {
+      return a.month - b.month
+    })
+
+    if (monthlySales) return monthlySales
+  },
+
+  getWeeklySales: async (year) => {
+    const weeklySales = await Order.findAll({
+      attributes: [
+        [sequelize.fn('WEEK', sequelize.col('created_at')), 'week'],
+        [sequelize.fn('SUM', sequelize.col('total_price')), 'total_sales'],
+      ],
+      where: {
+        created_at: {
+          [Op.between]: [`${year}-01-01`, `${year}-12-31`],
+        },
+      },
+      group: [sequelize.fn('WEEK', sequelize.col('created_at'))],
+      raw: true,
+    })
+    weeklySales.sort((a, b) => {
+      return a.week - b.week
+    })
+
+    if (weeklySales) return weeklySales
   }
 }
 
