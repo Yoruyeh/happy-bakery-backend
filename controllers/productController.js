@@ -54,10 +54,10 @@ const productController = {
 
       // set default date
       if (!isValidDate(startDate)) {
-        startDate = getOneYearAgo(startDate)
+        startDate = getOneYearAgo()
       }
       if (!isValidDate(endDate)) {
-        endDate = getToday(endDate)
+        endDate = getToday()
       }
       if (sort !== 'salesAmount' && sort !== 'salesQuantity' && sort !== '' && sort !== undefined) {
         throw new CError('sort invalid', 400)

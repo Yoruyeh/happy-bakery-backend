@@ -15,21 +15,29 @@ const dateFormateMonth = (dateString) => {
   return formattedDate
 }
 
+const getToday = () => {
+  const today = new Date()
+  today.setDate(today.getDate() + 1)
+  return today.toISOString().substring(0, 10)
+}
+
 const getOneYearAgo = () => {
   const oneYearAgo = new Date(Date.now() - 365 * 24 * 60 * 60 * 1000)
   return oneYearAgo.toISOString().substring(0, 10)
 }
 
+// "2023-10-18" -> "2022-10-18"
 const convertToOneYearAgo = (dateStr) => {
   const inputDate = new Date(dateStr)
   inputDate.setFullYear(inputDate.getFullYear() - 1)
   return inputDate.toISOString().split('T')[0]
 }
 
-const getToday = () => {
-  const today = new Date()
-  today.setDate(today.getDate() + 1)
-  return today.toISOString().substring(0, 10)
+// "2023-10-18" -> "2022"
+const getPreviousYear = (dateStr) => {
+  const currentDate = new Date(dateStr)
+  const previousYear = currentDate.getFullYear() - 1
+  return previousYear.toString()
 }
 
 // get random int
@@ -52,8 +60,9 @@ const getRandomDate = () => {
 module.exports = {
   dateFormate,
   dateFormateMonth,
+  getToday,
   getOneYearAgo,
   convertToOneYearAgo,
-  getToday,
+  getPreviousYear,
   getRandomDate
 }

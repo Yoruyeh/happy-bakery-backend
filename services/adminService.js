@@ -6,7 +6,7 @@ const { sequelize, User, Product, Category, ProductImage, Order, OrderItem } = r
 const productService = require('./productService')
 const { CError } = require('../middleware/error-handler')
 const { calShippingFee } = require('../helpers/fee-helper')
-const { dateFormateMonth, convertToOneYearAgo } = require('../helpers/date-helper')
+const { dateFormateMonth, convertToOneYearAgo, getPreviousYear } = require('../helpers/date-helper')
 
 const adminService = {
 
@@ -477,9 +477,11 @@ const adminService = {
   getSales: async (startDate, endDate) => {
     const totals = await adminService.getSalesAmount(startDate, endDate)
     const YOY = await adminService.getYoYSales(startDate, endDate, totals)
+    const compareTo = getPreviousYear(startDate)
     const data = Object.keys(totals).map((key) => ({
       [key]: {
         sales: totals[key],
+        compareTo: compareTo,
         YOY: YOY[key],
       }
     }))

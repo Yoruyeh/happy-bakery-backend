@@ -1,7 +1,7 @@
 const adminService = require('../services/adminService')
 const { CError } = require('../middleware/error-handler')
 const { isValidateId, isValidDate, validProduct, validateImages } = require('../helpers/validation-helper')
-const { getOneWeekAgo, getToday } = require('../helpers/date-helper')
+const { getToday } = require('../helpers/date-helper')
 const { imgurFileHandler } = require('../helpers/file-helper')
 
 const adminController = {
