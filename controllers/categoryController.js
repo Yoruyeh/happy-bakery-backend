@@ -4,8 +4,9 @@ const { CError } = require('../middleware/error-handler');
 const categoryController = {
   getAllCategories: async (req, res, next) => {
     try {
-      const categories = await categoryService.getAllCategories();
-      res.json({ categories });
+      const { status, message, categories } =
+        await categoryService.getAllCategories();
+      res.json({ status, message, categories });
     } catch (error) {
       next(error);
     }
