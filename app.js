@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(methodOverride('_method'));
-app.use(cors({ origin: 'http://localhost:8800' }));
+app.use(cors({ origin: ['http://localhost:8800', 'http://localhost:3001'] }));
 
 // routes
 app.get('', (req, res) => {
