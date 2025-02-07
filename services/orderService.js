@@ -1,18 +1,24 @@
-const sequelize = require('sequelize')
-const { Order, OrderItem, Product, Cart, CartItem } = require('../models')
-const { calShippingFee } = require("../helpers/fee-helper")
+const sequelize = require('sequelize');
+const { Order, OrderItem, Product, Cart, CartItem } = require('../models');
+const { calShippingFee } = require('../helpers/fee-helper');
 
 const orderService = {
-
   getOrder: async (id) => {
-
     const order = await Order.findByPk(id, {
       attributes: [
         'id',
         [sequelize.literal('DATE(order_date)'), 'order_date'],
         'total_price',
         'status',
-        [sequelize.fn('CONCAT', sequelize.col('first_name'), ' ', sequelize.col('last_name')), 'customer_name'],
+        [
+          sequelize.fn(
+            'CONCAT',
+            sequelize.col('first_name'),
+            ' ',
+            sequelize.col('last_name')
+          ),
+          'customer_name',
+        ],
         'email',
         'address',
         'phone',
@@ -25,82 +31,105 @@ const orderService = {
         attributes: ['quantity', 'price_each'],
         include: {
           model: Product,
-          attributes: ['name', 'cover']
-        }
-      }
-    })
+          attributes: ['id', 'name', 'cover'],
+        },
+      },
+    });
 
-    const item_count = order.OrderItems.length
-    const shipping_fee = calShippingFee(order.dataValues.shipping_method)
-    order.setDataValue('item_count', item_count)
-    order.setDataValue('shipping_fee', shipping_fee)
+    const item_count = order.OrderItems.length;
+    const shipping_fee = calShippingFee(order.dataValues.shipping_method);
+    order.setDataValue('item_count', item_count);
+    order.setDataValue('shipping_fee', shipping_fee);
 
     if (order !== null) {
       return {
         status: 'success',
         message: 'order retrieved succeed',
-        order
-      }
+        order,
+      };
     } else {
       return {
         status: 'success',
-        message: 'no order found'
-      }
+        message: 'no order found',
+      };
     }
   },
 
   postOrder: async (userId, orderItems, total, shipment, payment) => {
-    const { email, firstName, lastName, address, phone, shippingMethod } = shipment
-    const { paymentMethod } = payment
+    const { email, firstName, lastName, address, phone, shippingMethod } =
+      shipment;
+    const { paymentMethod } = payment;
 
     // check stock and create order items
-    const orderItemsWithStockCheck = await orderService.checkStock(orderItems)
+    const orderItemsWithStockCheck = await orderService.checkStock(orderItems);
 
     // create order
-    const { newOrder, newOrderItem } = await orderService.createOrder(userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod, orderItemsWithStockCheck)
+    const { newOrder, newOrderItem } = await orderService.createOrder(
+      userId,
+      firstName,
+      lastName,
+      email,
+      phone,
+      address,
+      total,
+      paymentMethod,
+      shippingMethod,
+      orderItemsWithStockCheck
+    );
 
     // deduct stock
-    await orderService.deductStockQuantity(orderItemsWithStockCheck)
+    await orderService.deductStockQuantity(orderItemsWithStockCheck);
 
     // clear cart
-    await orderService.clearCart(userId)
+    await orderService.clearCart(userId);
 
     if (newOrder !== null) {
       return {
         status: 'success',
         message: 'Create order succeed',
         newOrder,
-        newOrderItem
-      }
+        newOrderItem,
+      };
     } else {
       return {
         status: 'error',
-        message: 'Create order fail'
-      }
+        message: 'Create order fail',
+      };
     }
   },
 
   checkStock: async (orderItems) => {
-    const orderItemsWithStockCheck = []
+    const orderItemsWithStockCheck = [];
     for (const item of orderItems) {
-      const product = await Product.findByPk(item.id)
+      const product = await Product.findByPk(item.id);
       if (!product) {
-        throw new Error(`Product with ID ${item.id} not found.`)
+        throw new Error(`Product with ID ${item.id} not found.`);
       }
       if (item.quantity > product.stockQuantity) {
-        throw new Error(`Not enough stock for product ${product.name}.`)
+        throw new Error(`Not enough stock for product ${product.name}.`);
       }
 
       orderItemsWithStockCheck.push({
         productId: item.id,
         quantity: item.quantity,
-        priceEach: item.price
-      })
+        priceEach: item.price,
+      });
     }
-    return orderItemsWithStockCheck
+    return orderItemsWithStockCheck;
   },
 
-  createOrder: async (userId, firstName, lastName, email, phone, address, total, paymentMethod, shippingMethod, orderItemsWithStockCheck) => {
+  createOrder: async (
+    userId,
+    firstName,
+    lastName,
+    email,
+    phone,
+    address,
+    total,
+    paymentMethod,
+    shippingMethod,
+    orderItemsWithStockCheck
+  ) => {
     const newOrder = await Order.create({
       userId,
       status: 'pending',
@@ -112,35 +141,34 @@ const orderService = {
       orderDate: new Date(),
       totalPrice: total,
       paymentMethod,
-      shippingMethod
-    })
+      shippingMethod,
+    });
     // create order items
-    const orderId = newOrder.dataValues.id
-    orderItemsWithStockCheck.forEach(item => {
-      item.orderId = orderId
-    })
-    const newOrderItem = await OrderItem.bulkCreate(orderItemsWithStockCheck)
-    return { newOrder, newOrderItem }
+    const orderId = newOrder.dataValues.id;
+    orderItemsWithStockCheck.forEach((item) => {
+      item.orderId = orderId;
+    });
+    const newOrderItem = await OrderItem.bulkCreate(orderItemsWithStockCheck);
+    return { newOrder, newOrderItem };
   },
 
   deductStockQuantity: async (orderItems) => {
     for (const item of orderItems) {
-      const product = await Product.findByPk(item.productId)
+      const product = await Product.findByPk(item.productId);
       if (product) {
-        const newStockQuantity = product.stockQuantity - item.quantity
-        await product.update({ stockQuantity: newStockQuantity })
+        const newStockQuantity = product.stockQuantity - item.quantity;
+        await product.update({ stockQuantity: newStockQuantity });
       }
     }
   },
 
   clearCart: async (userId) => {
-    const cart = await Cart.findOne({ where: { userId } })
+    const cart = await Cart.findOne({ where: { userId } });
     if (cart) {
-      const cartId = cart.dataValues.id
-      await CartItem.destroy({ where: { cartId: cartId } })
+      const cartId = cart.dataValues.id;
+      await CartItem.destroy({ where: { cartId: cartId } });
     }
-  }
+  },
+};
 
-}
-
-module.exports = orderService
+module.exports = orderService;
