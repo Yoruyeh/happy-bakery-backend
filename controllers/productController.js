@@ -6,7 +6,6 @@ const { getOneYearAgo, getToday } = require('../helpers/date-helper');
 const productController = {
   getProducts: async (req, res, next) => {
     try {
-      console.log(req.query);
       let { category, page, limit, sort, keyword } = req.query;
       // page should be at least 1
       page = page >= 1 ? page : 1;
