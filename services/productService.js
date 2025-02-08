@@ -6,6 +6,7 @@ const productService = {
   getProducts: async (category, page, limit, sort, keyword) => {
     // define display products per page
     const perPage = Number(limit) || 12;
+    const currentPage = Math.max(1, Number(page) || 1);
     // define sorting options
     const sortOptions = {
       price_desc: ['price_regular', 'DESC'],
@@ -21,9 +22,9 @@ const productService = {
 
     const queryOptions = {
       where: {},
-      order: [],
+      order: [['id', 'DESC']],
       limit: perPage,
-      offset: (Number(page) - 1) * perPage,
+      offset: (currentPage - 1) * perPage,
       attributes: [
         'id',
         'name',
@@ -45,8 +46,9 @@ const productService = {
       queryOptions.where.category_id = category;
     }
     if (sort && sortOptions[sort]) {
-      queryOptions.order.push(sortOptions[sort]);
+      queryOptions.order.unshift(sortOptions[sort]);
     }
+
     if (keyword) {
       queryOptions.where[Op.or] = [
         {
@@ -58,6 +60,7 @@ const productService = {
     }
 
     const products = await Product.findAll(queryOptions);
+
     const paginationInfo = {
       productCount,
       currentPage: Number(page),
