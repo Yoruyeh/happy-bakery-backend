@@ -102,10 +102,7 @@ const userService = {
       errors.push('Invalid birthday');
     }
 
-    if (
-      (phone !== undefined && phone.length > 10) ||
-      (phone !== undefined && phone.length < 8)
-    ) {
+    if ((phone && phone.length > 10) || (phone && phone.length < 8)) {
       errors.push('Invalid phone number');
     }
 
